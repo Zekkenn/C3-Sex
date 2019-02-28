@@ -4,8 +4,11 @@
 #Data Import
 import pandas as pd
 from io import StringIO
+import os
 
-input_data = pd.read_csv("C:/Users/ASUS/Documents/Sebastian/chatBot/omegleBot/Datasets/User_Reviews/User_movie_review.csv")
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+input_data = pd.read_csv( ROOT_DIR + '/Datasets/User_Reviews/User_movie_review.csv')
 
 
 #Basic Details of the data
@@ -46,6 +49,8 @@ dtm = pd.DataFrame(countvec.fit_transform(input_data['text']).toarray(), columns
 dtm['class'] = input_data['class']
 dtm.head()  
 
+test = countvec.get_feature_names()
+
 ###Building training and testing sets
 df_train = dtm[:1900]
 df_test = dtm[1900:]
@@ -67,8 +72,10 @@ clf.score(X_test,df_test['class'])
 ##########
 # Creating predict function - data is a string
 def predict( data ):
-    df = pd.read_csv(StringIO( "Text\n" + data))
-    countvec = CountVectorizer(min_df= 5, tokenizer=tokenize, stop_words=stopwords.words('english'))
-    dtm = pd.DataFrame(countvec.fit_transform(input_data['text']).toarray(), columns=countvec.get_feature_names(), index=None)
-    return clf.predict( dtm )
-  
+    df = pd.read_csv(StringIO( "class,text\n" + "_," + " " + data))
+    countvec = CountVectorizer(min_df= 5, tokenizer=tokenize, stop_words=stopwords.words('english'), vocabulary=test)
+    #print(len(countvec.fit_transform(df['text']).toarray()[0]))
+    #print(len(countvec.get_feature_names()))
+    dtm = pd.DataFrame(countvec.fit_transform(df['text']).toarray(), columns=countvec.get_feature_names(), index=None)
+    dtm['class'] = df['class']
+    return clf.predict( dtm.drop('class', axis=1) )

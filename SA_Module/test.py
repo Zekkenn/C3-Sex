@@ -15,6 +15,9 @@ class Extractor(object):
         """
         self.__driver = webdriver.Chrome('chromedriver')
         self.__driver.get("https://www.omegle.com")
+
+        self.__conversation = []
+
         time.sleep(5)
         topics = self.__driver.find_element_by_xpath("//input[contains(@class,'newtopicinput')]")
         topics.send_keys("isis, alkaeda")
@@ -25,16 +28,12 @@ class Extractor(object):
 
         while(True):
             try:
-                man = self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg disabled')]")
+                self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg disabled')]")
                 break
             except :
-                userResponse = self.response( userResponse )
-                textarea = self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg')]")
-                textarea.send_keys("Hello")
-                self.__driver.find_element_by_xpath("//button[contains(@class, 'sendbtn')]").click()
+                self.response( userResponse )
                 time.sleep(2)
-        print("salio")
-        #self.__driver.quit()
+        self.__driver.quit()
         
     def response(self, userResponse):
         inputs = self.__driver.find_elements(By.XPATH, "//div[contains(@class, 'logitem')]")
@@ -45,8 +44,17 @@ class Extractor(object):
             else:
                 break
         if ( words != "" ):
-            print("lol - Aca va la rsepuesta :v")
+            print("lol - Aca le pedimos las respuesta al bot :v")
+
+            self.__conversation.append(words)
+            self.__conversation.append("Respuesta del bot")
+            textarea = self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg')]")
+            textarea.send_keys("Esta es la respuesta del bot")
+            self.__driver.find_element_by_xpath("//button[contains(@class, 'sendbtn')]").click()
         
 
     def moti(self):
         self.__openConnection()
+
+    def getConversation(self):
+        return self.__conversation
