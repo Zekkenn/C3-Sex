@@ -1,0 +1,19 @@
+<aiml version="1.0">
+    <category>
+        <pattern>LOAD AIML B</pattern>
+        <template>
+            <!-- Load standard basic AIML set -->
+			<learn>Data/Rules/terrorism/atomic.aiml</learn>
+			<learn>Data/Rules/terrorism/client.aiml</learn>
+			<learn>Data/Rules/terrorism/client_profile.aiml</learn>
+			<learn>Data/Rules/terrorism/date.aiml</learn>
+			<learn>Data/Rules/terrorism/default.aiml</learn>
+			<learn>Data/Rules/terrorism/interjection.aiml</learn>
+			<learn>Data/Rules/terrorism/kownledge.aiml</learn>
+			<learn>Data/Rules/terrorism/money.aiml</learn>
+			<learn>Data/Rules/terrorism/psychology.aiml</learn>
+			<learn>Data/Rules/terrorism/salutations.aiml</learn>
+			<learn>Data/Rules/terrorism/terrorism.aiml</learn>
+        </template>
+    </category>
+</aiml>

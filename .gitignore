@@ -1,0 +1,3 @@
+# exclude everything from results
+ACA/Data/Result/*
+!ACA/Data/Result
