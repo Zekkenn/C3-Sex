@@ -17,8 +17,8 @@ import os
 import time
 
 import tensorflow as tf
-from chatbot.tokenizeddata import TokenizedData
-from chatbot.modelcreator import ModelCreator
+from ACA.chatbot.tokenizeddata import TokenizedData
+from ACA.chatbot.modelcreator import ModelCreator
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 

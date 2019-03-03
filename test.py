@@ -2,9 +2,17 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
+from collections import deque
+
+import os
 import time
 import gc
-from collections import deque
+import tensorflow as tf
+
+from settings import PROJECT_ROOT
+from ACA.chatbot.botpredictor import BotPredictor
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 class Extractor(object):
 
@@ -18,14 +26,26 @@ class Extractor(object):
 
         self.__conversation = []
 
+        # Setting Topics
         time.sleep(5)
         topics = self.__driver.find_element_by_xpath("//input[contains(@class,'newtopicinput')]")
         topics.send_keys("isis, alkaeda")
         self.__driver.find_element_by_xpath("//img[contains(@id, 'textbtn')]").click()
         time.sleep(5)
 
-        userResponse = False
+        # Start Chatbot Session
+        corp_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Corpus')
+        knbs_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Variety')
+        res_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Result')
+        rules_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Rules')
 
+        with tf.Session() as sess:
+            self.__predictor = BotPredictor(sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
+                                 result_dir=res_dir, aiml_dir=rules_dir,
+                                 result_file='basic')
+            self.__session_id = self.__predictor.session_data.add_session()
+
+        userResponse = False
         while(True):
             try:
                 self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg disabled')]")
@@ -44,12 +64,14 @@ class Extractor(object):
             else:
                 break
         if ( words != "" ):
-            print("lol - Aca le pedimos las respuesta al bot :v")
+            # Bot Response
+
+            botResponse = self.__predictor.predict(self.__session_id, words)
 
             self.__conversation.append(words)
-            self.__conversation.append("Respuesta del bot")
+            self.__conversation.append(botResponse)
             textarea = self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg')]")
-            textarea.send_keys("Esta es la respuesta del bot")
+            textarea.send_keys(botResponse)
             self.__driver.find_element_by_xpath("//button[contains(@class, 'sendbtn')]").click()
         
 

@@ -17,8 +17,8 @@
 """ Class Wsdl to generate WSDL Document """
 import xml.dom.minidom
 import inspect
-from webui.server.tornadows import xmltypes
-from webui.server.tornadows import complextypes
+from ACA.webui.server.tornadows import xmltypes
+from ACA.webui.server.tornadows import complextypes
 
 class Wsdl:
 	""" ToDO:

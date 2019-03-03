@@ -1,6 +1,6 @@
 from test import Extractor
 from threading import Thread
-import sentimentAnalysis
+import SA_Module.sentimentAnalysis
 
 def startBot( bot ):
     bot.moti()
@@ -8,7 +8,7 @@ def startBot( bot ):
 def main():
     bots = list()
     threads = list()
-    for _ in range(0,40):
+    for _ in range(0,2):
         a = Extractor()
         bots.append(a)
         thread = Thread(target = startBot, args = (a, ))

@@ -18,14 +18,14 @@ import tensorflow as tf
 import tornado.httpserver
 import tornado.ioloop
 
-from webui.server.tornadows import soaphandler
-from webui.server.tornadows import webservices
-from webui.server.tornadows import complextypes
-from webui.server.tornadows import xmltypes
-from webui.server.tornadows.soaphandler import webservice
+from ACA.webui.server.tornadows import soaphandler
+from ACA.webui.server.tornadows import webservices
+from ACA.webui.server.tornadows import complextypes
+from ACA.webui.server.tornadows import xmltypes
+from ACA.webui.server.tornadows.soaphandler import webservice
 
 from settings import PROJECT_ROOT
-from chatbot.botpredictor import BotPredictor
+from ACA.chatbot.botpredictor import BotPredictor
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 

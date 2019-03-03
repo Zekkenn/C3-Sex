@@ -19,7 +19,7 @@ import tensorflow as tf
 from collections import namedtuple
 from tensorflow.python.ops import lookup_ops
 
-from chatbot.hparams import HParams
+from ACA.chatbot.hparams import HParams
 
 COMMENT_LINE_STT = "#=="
 CONVERSATION_SEP = "==="

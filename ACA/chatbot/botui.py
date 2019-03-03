@@ -18,14 +18,14 @@ import sys
 import tensorflow as tf
 
 from settings import PROJECT_ROOT
-from chatbot.botpredictor import BotPredictor
+from ACA.chatbot.botpredictor import BotPredictor
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 
 def bot_ui():
     corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
-    knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
+    knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'Variety')
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
     rules_dir = os.path.join(PROJECT_ROOT, 'Data', 'Rules')
 

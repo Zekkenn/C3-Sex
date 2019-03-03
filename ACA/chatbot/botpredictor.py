@@ -18,12 +18,12 @@ import string
 import aiml
 import tensorflow as tf
 
-from chatbot.tokenizeddata import TokenizedData
-from chatbot.modelcreator import ModelCreator
-from chatbot.knowledgebase import KnowledgeBase
-from chatbot.sessiondata import SessionData
-from chatbot.patternutils import check_patterns_and_replace
-from chatbot.functiondata import call_function
+from ACA.chatbot.tokenizeddata import TokenizedData
+from ACA.chatbot.modelcreator import ModelCreator
+from ACA.chatbot.knowledgebase import KnowledgeBase
+from ACA.chatbot.sessiondata import SessionData
+from ACA.chatbot.patternutils import check_patterns_and_replace
+from ACA.chatbot.functiondata import call_function
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 BRAIN_FILE = "brain.dump"

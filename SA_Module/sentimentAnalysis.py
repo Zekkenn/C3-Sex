@@ -6,9 +6,9 @@ import pandas as pd
 from io import StringIO
 import os
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+ACTUAL_DIR = os.path.dirname(os.path.abspath(__file__))
 
-input_data = pd.read_csv( ROOT_DIR + '/Datasets/User_Reviews/User_movie_review.csv')
+input_data = pd.read_csv( ACTUAL_DIR + '\\Datasets\\User_Reviews\\User_movie_review.csv')
 
 
 #Basic Details of the data

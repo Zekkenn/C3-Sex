@@ -13,7 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 import tensorflow as tf
-import chatbot.modelhelper as model_helper
+import ACA.chatbot.modelhelper as model_helper
 
 from tensorflow.python.layers import core as layers_core
 
