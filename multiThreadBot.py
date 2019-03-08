@@ -8,7 +8,7 @@ def startBot( bot ):
 def main():
     bots = list()
     threads = list()
-    for _ in range(0,2):
+    for _ in range(0,1):
         a = Extractor()
         bots.append(a)
         thread = Thread(target = startBot, args = (a, ))

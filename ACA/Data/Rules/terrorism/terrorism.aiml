@@ -2,11 +2,6 @@
 <aiml version="1.0">
 
 <category>
-<pattern>*</pattern>
-<template>XNORESPONSE</template>
-</category>
-
-<category>
 <pattern>WHAT IS AL QAEDA</pattern>
 <template><srai>WHAT IS ALQAEDA</srai></template>
 </category>
@@ -152,11 +147,15 @@
 </template>
 </category>
 
-
-
 <category>
 <pattern>BYE</pattern>
 <template>Bye, Allah and His mercies be praised.</template>
+</category>
+
+
+<category>
+<pattern>*</pattern>
+<template>XNOANSWER</template>
 </category>
 
 </aiml>

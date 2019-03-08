@@ -89,35 +89,35 @@ class BotPredictor(object):
             answer = "Don't you want to say something to me?"
             chat_session.after_prediction(question, answer)
             return answer
-
+        print("============================================")
         pat_matched, new_sentence, para_list = check_patterns_and_replace(question)
-
         retrival_response = self.kmodel.respond(question)
-        if retrival_response != 'XNOANSWER':
+        if 'XNOANSWER' not in retrival_response:
             return retrival_response
-        
+        print(retrival_response)
+        print("looooooooooooooool")
         for pre_time in range(2):
             tokens = nltk.word_tokenize(new_sentence.lower())
             tmp_sentence = [' '.join(tokens[:]).strip()]
-
+            print("looooooooooooooool1")
             self.session.run(self.infer_batch.initializer,
                              feed_dict={self.src_placeholder: tmp_sentence})
-
+            print("looooooooooooooool2")
             outputs, _ = self.model.infer(self.session)
 
             if self.hparams.beam_width > 0:
                 outputs = outputs[0]
-
+            print("looooooooooooooool3")
             eos_token = self.hparams.eos_token.encode("utf-8")
             outputs = outputs.tolist()[0]
 
             if eos_token in outputs:
                 outputs = outputs[:outputs.index(eos_token)]
-
+            print("looooooooooooooool4")
             if pat_matched and pre_time == 0:
                 out_sentence, if_func_val = self._get_final_output(outputs, chat_session,
                                                                    para_list=para_list)
-                # print(out_sentence+"\n")
+                print(out_sentence+"\nlolololololol")
                 if if_func_val:
                     chat_session.after_prediction(question, out_sentence)
                     return out_sentence
@@ -125,8 +125,8 @@ class BotPredictor(object):
                     new_sentence = question
             else:
                 out_sentence, _ = self._get_final_output(outputs, chat_session)
-                # print("Not pat matched")
-                # print(out_sentence+"\n")
+                print("Not pat matched")
+                print(out_sentence+"\nlolololloloololololololol")
                 chat_session.after_prediction(question, out_sentence)
                 return out_sentence
 
