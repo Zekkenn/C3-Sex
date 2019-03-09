@@ -15,7 +15,7 @@ bag.of.words <- function(data, sparse = 0.999, init = FALSE, test = TRUE){
     dtm <- removeSparseTerms(dtm, sparse)
     createDict(dtm)
   } else {
-    words.dict <- scan("dict.txt", what = character())
+    words.dict <- scan("EC_Module/dict.txt", what = character())
     dtm <- DocumentTermMatrix(docs, list( dictionary = words.dict ))
   }
   
@@ -66,14 +66,14 @@ preproccess.data <- function(data, stemming = TRUE, language = "english"){
 
 generateDict <- function(model.trainingdata){
   q2 <- names(model.trainingdata)
-  filename <- paste("dict",".txt", sep="")
+  filename <- paste("EC_Module/dict",".txt", sep="")
   writeLines(as.character(q2[-1]), con=filename)
 }
 
 
 # ============================ MORIARTY : USING EC MODULE ==================================
 
-modelEC <- readRDS("models/modelSVM_isear_fin.rds")
+modelEC <- readRDS("EC_Module/models/modelSVM_isear_fin.rds")
 #generateDict(modelEC$trainingData)
 
 # READ REPLIES
@@ -81,10 +81,11 @@ replies.file <- commandArgs(trailingOnly = TRUE)
 replies <- scan(replies.file, what = character(), sep = '\n')
 
 test <- data.frame(SIT = replies, stringsAsFactors = FALSE)
+
 test.rep <- bag.of.words(preproccess.data(test))
 
 predEC <- predict(modelEC, test.rep)
 
 # SAVE PREDICTIONS
-filename <- paste("Pred",replies.file, sep="_")
+filename <- gsub(".txt","_EC.txt",replies.file)
 writeLines(as.character(paste(replies,predEC,sep=",")), con=filename)

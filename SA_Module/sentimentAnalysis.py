@@ -74,8 +74,15 @@ clf.score(X_test,df_test['class'])
 def predict( data ):
     df = pd.read_csv(StringIO( "class,text\n" + "_," + " " + data))
     countvec = CountVectorizer(min_df= 5, tokenizer=tokenize, stop_words=stopwords.words('english'), vocabulary=test)
-    #print(len(countvec.fit_transform(df['text']).toarray()[0]))
-    #print(len(countvec.get_feature_names()))
     dtm = pd.DataFrame(countvec.fit_transform(df['text']).toarray(), columns=countvec.get_feature_names(), index=None)
     dtm['class'] = df['class']
     return clf.predict( dtm.drop('class', axis=1) )
+
+def sa_measure( replies_file ):
+    reps = list()
+    with open(replies_file, 'r') as file:
+        for row in file.readlines():
+            reps.append(row.strip("\n"))
+    with open(replies_file.replace(".txt","_SA.txt"), 'w+') as resultFile:
+        for reply in reps:
+            resultFile.write(reply + "," + predict(reply)[0] + "\n")
