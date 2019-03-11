@@ -78,6 +78,13 @@ def predict( data ):
     dtm['class'] = df['class']
     return clf.predict( dtm.drop('class', axis=1) )
 
+def predict_proba( data ):
+    df = pd.read_csv(StringIO( "class,text\n" + "_," + " " + data))
+    countvec = CountVectorizer(min_df= 5, tokenizer=tokenize, stop_words=stopwords.words('english'), vocabulary=test)
+    dtm = pd.DataFrame(countvec.fit_transform(df['text']).toarray(), columns=countvec.get_feature_names(), index=None)
+    dtm['class'] = df['class']
+    return clf.predict_proba( dtm.drop('class', axis=1) )
+
 def sa_measure( replies_file ):
     reps = list()
     with open(replies_file, 'r') as file:

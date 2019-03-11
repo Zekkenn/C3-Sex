@@ -9,6 +9,7 @@ import time
 import gc
 import tensorflow as tf
 import SA_Module.sentimentAnalysis as sentimentModule
+import analytics as analize
 
 from settings import PROJECT_ROOT
 from ACA.chatbot.botpredictor import BotPredictor
@@ -33,7 +34,8 @@ class Extractor(object):
         self.__driver.get("https://www.omegle.com")
 
         self.__conversation = []
-
+        self.__metricsByConversation = []
+        self.__timeResponse = []
         self.__currentLength = 0;
 
         # Setting Topics
@@ -42,51 +44,60 @@ class Extractor(object):
         topics.send_keys("games")
         self.__driver.find_element_by_xpath("//img[contains(@id, 'textbtn')]").click()
         time.sleep(5)
-
+        first = True ; first_time = 0
         self.__sess = tf.Session()
         self.__predictor = BotPredictor(self.__sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
                                  result_dir=res_dir, aiml_dir=rules_dir,
                                  result_file='basic')
         self.__session_id = self.__predictor.session_data.add_session()
-
+        self.__initTimeUserResponse = 0
         userResponse = False
         while(True):
             try:
                 self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg disabled')]")
                 # Analize Data - Conversation Ended
-                print(self.__conversation)
+                last_time_sec = time.clock() - first_time
                 break
             except :
                 self.response( userResponse )
+                if (first):
+                    first_time = time.clock()
+                    first = False
             time.sleep(2)
         #self.__driver.quit()
         
     def response(self, userResponse):
         inputs = self.__driver.find_elements(By.XPATH, "//div[contains(@class, 'logitem')]/p[contains(@class, 'msg')]")
         words = ""
-        print( str(self.__currentLength) + " " + str(len(inputs)) )
         if ( self.__currentLength < len(inputs) ):
-            self.__currentLength = len(inputs);
+            self.__currentLength = len(inputs)
+
             for i in range( 0, len(inputs) ):
                 if ( "Stranger" in inputs[ len(inputs) - i - 1 ].text ):
                     words = inputs[ len(inputs) - i - 1 ].text[9:] + " " + words
-                    print("looool: " + str(i) + " " + words)
                 else:
                     break
+
+            self.__initTimeUserResponse = 0
+
         if ( words != "" ):
             # Bot Response
+            self.__finalTimeUserResponse = time.clock()
             botResponse = self.__predictor.predict(self.__session_id, words.lower())
             if ( botResponse.strip() != "" and botResponse != None ): 
-                self.__currentLength += 1;
+                self.__currentLength += 1
                 self.__conversation.append(words)
+                self.__timeResponse.append( self.__finalTimeUserResponse - self.__initTimeUserResponse )
                 textarea = self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg')]")
                 textarea.send_keys(botResponse)
                 self.__driver.find_element_by_xpath("//button[contains(@class, 'sendbtn')]").click()
+            
         elif ( self.__currentLength == 0 ): 
             textarea = self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg')]")
             textarea.send_keys("Hi")
             self.__driver.find_element_by_xpath("//button[contains(@class, 'sendbtn')]").click()
-            self.__currentLength += 1;
+            self.__currentLength += 1
+            self.__finalTimeUserResponse = time.clock()
 
     def moti(self):
         self.__openConnection()
