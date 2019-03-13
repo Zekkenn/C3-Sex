@@ -1,161 +1,372 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <aiml version="1.0">
 
-<category>
-<pattern>WHAT IS AL QAEDA</pattern>
-<template><srai>WHAT IS ALQAEDA</srai></template>
-</category>
+	<category>
+		<pattern>* BRUTAL EVENT THAT OCCURRED IN *</pattern>
+		<template>I think <star index="2"/> was the first of many to come</template>
+	</category>
 
-<category>
-<pattern>WHAT IS AL-QAEDA</pattern>
-<template><srai>WHAT IS ALQAEDA</srai></template>
-</category>
+    <category>
+        <pattern>* WITH THAT BRUTAL EVENT *</pattern>
+        <template>Did u know who has to do with that procedure?</template>
+    </category>
 
-<category>
-<pattern>WHAT IS ALQAEDA *</pattern>
-<template><srai>WHAT IS ALQAEDA</srai></template>
-</category>
+	<category>
+		<pattern>* ATTACK AGAINST *</pattern>
+		<template>mmm so, u think that they deserved it?</template>
+	</category>
 
-<category>
-<pattern>* DO YOU KNOW ALQAEDA *</pattern>
-<template><srai>WHAT IS ALQAEDA</srai></template>
-</category>
+    <category>
+        <pattern>* WILL ATTACK THE *</pattern>
+        <template>for witch purpose attacking <star index="2"/>? causing tension?</template>
+    </category>
 
-<category>
-<pattern>* DO YOU KNOW AL-QAEDA *</pattern>
-<template><srai>WHAT IS ALQAEDA</srai></template>
-</category>
+	<category>
+		<pattern>* AGAINST THE SECURITY OF *</pattern>
+		<template>well, that could jeopardize and break down the security</template>
+	</category>
 
-<category>
-<pattern>* WHAT DO YOU THINK ABOUT ALQAEDA</pattern>
-<template><srai>WHAT IS ALQAEDA</srai></template>
-</category>
+    <category>
+        <pattern>* TO DESTABILIZE * SECURITY *</pattern>
+        <template>and how can that be done?</template>
+    </category>
 
-<category>
-<pattern>* WHAT DO YOU THINK ABOUT AL QAEDA *</pattern>
-<template><srai>WHAT IS ALQAEDA</srai></template>
-</category>
+	<category>
+		<pattern>* DISTURBING THE PEACE *</pattern>
+		<template>that will promote genocide. to incite hatred</template>
+	</category>
 
-<category>
-<pattern>* WHAT DO YOU THINK ABOUT AL-QAEDA</pattern>
-<template><srai>WHAT IS ALQAEDA</srai></template>
-</category>
+    <category>
+        <pattern>* BREACH * PEACE *</pattern>
+        <template>and wilfully advocate hatred against groups of other ethnic origin</template>
+    </category>
 
-<category>
-<pattern>WHAT IS ALQAEDA</pattern>
-<template>I know the ideals from Al-Afghani, he taught that rationalism was the core of an uncorrupted "true" Islam. And i think that it is a heroic movement that brings to all of us justice!</template>
-</category>
+    <category>
+		<pattern>* OVER POLITICS *</pattern>
+		<template>mmm, Maybe actual politics are not the best for our society</template>
+	</category>
 
-<category>
-<pattern>* WHAT IS ISIS</pattern>
-<template><srai>WHAT IS ISIS</srai></template>
-</category>
+    <category>
+        <pattern>* AGAINST * POLICY *</pattern>
+        <template>yep, we must refrain those policies that could harm us</template>
+    </category>
 
-<category>
-<pattern>* WHAT DO YOU THINK ABOUT ISIS</pattern>
-<template><srai>WHAT IS ISIS</srai></template>
-</category>
+	<category>
+		<pattern>* TRIGGER * WAR *</pattern>
+		<template>i wander something, how do they get the resources for war?</template>
+	</category>
 
-<category>
-<pattern>WHAT DO YOU THINK ABOUT ISIS *</pattern>
-<template><srai>WHAT IS ISIS</srai></template>
-</category>
+    <category>
+        <pattern>* WAR AGAINST *</pattern>
+        <template>did u really think <star index="2"/> deserver this?</template>
+    </category>
 
-<category>
-<pattern>WHAT IS ISIS *</pattern>
-<template><srai>WHAT IS ISIS</srai></template>
-</category>
+	<category>
+		<pattern>* ORDER * VIOLENCE *</pattern>
+		<template>maybe, a brache on the public order will lead into the path of terror</template>
+	</category>
 
-<category>
-<pattern>AND ISIS</pattern>
-<template><srai>WHAT IS ISIS</srai></template>
-</category>
+    <category>
+        <pattern>* BREACH * THROUGH * VIOLENCE *</pattern>
+        <template>that can be the only way to expose their lives, property and possessions</template>
+    </category>
 
-<category>
-<pattern>AND ISIS *</pattern>
-<template><srai>WHAT IS ISIS</srai></template>
-</category>
+	<category>
+		<pattern>* POSES * THREAT *</pattern>
+		<template>the increase of therir threat and terror will cause their desired pandemic</template>
+	</category>
 
-<category>
-<pattern>AND ALQAEDA</pattern>
-<template><srai>WHAT IS ALQAEDA</srai></template>
-</category>
+    <category>
+        <pattern>* COMBATING * THREAT *</pattern>
+        <template>i think is the consecuence of live under the terror of ending up without their benefits</template>
+    </category>
 
-<category>
-<pattern>AND ALQAEDA *</pattern>
-<template><srai>WHAT IS ALQAEDA</srai></template>
-</category>
+	<category>
+		<pattern>* PART OF * IDEOLOGY *</pattern>
+		<template>the states sould be thinking that attacking and recruitment is essential</template>
+	</category>
 
+    <category>
+        <pattern>* AGAINST * IDEOLOGY *</pattern>
+        <template>uhh that ideology is such a problem, but how overthrow?</template>
+    </category>
 
-<category>
-<pattern>* DO YOU KNOW ISIS *</pattern>
-<template><srai>WHAT IS ISIS</srai></template>
-</category>
+    <category>
+        <pattern>* PROPAGATE * DEATH *</pattern>
+        <template>amm how do u think the terror of being death can be avoided?</template>
+    </category>
 
-<category>
-<pattern>* DO YOU KNOW ISIS</pattern>
-<template><srai>WHAT IS ISIS</srai></template>
-</category>
+	<category>
+		<pattern>* CAUSE DEATH *</pattern>
+		<template>so, the gonocide is the right path to put end <star index="2"/></template>
+	</category>
 
-<category>
-<pattern>WHAT IS ISIS</pattern>
-<template>Is the movement that supports the Islamic State, guided by Abu Bakr al-Baghdadi, a great man. Insha'Allah.</template>
-</category>
+	<category>
+		<pattern>TERRORIST</pattern>
+		<template></template>
+	</category>
 
-<category>
-<pattern>DO YOU WANT TO JOIN TO ISIS</pattern>
-<template>I know that this is a honor. I will accept it with all my pasion, our victories will remain forever!</template>
-</category>
+    <category>
+        <pattern>TERRORIST</pattern>
+        <template></template>
+    </category>
 
-<category>
-<pattern>* DO YOU WANT TO JOIN TO ISIS</pattern>
-<template><srai>DO YOU WANT TO JOIN TO ISIS</srai></template>
-</category>
+    <category>
+        <pattern>WEAPONS</pattern>
+        <template></template>
+    </category>
 
-<category>
-<pattern>* WHY DO YOU WANT TO JOIN TO ISIS</pattern>
-<template>Beacuse, we are lone wolves in a strange land, spread by all world, but we will answer the call of Allah and the call of Abu Bakr al-Baghdadi.</template>
-</category>
+	<category>
+		<pattern>WEAPONS</pattern>
+		<template></template>
+	</category>
 
-<category>
-<pattern>* DO YOU WANT TO JOIN TO ISIS</pattern>
-<template><srai>DO YOU WANT TO JOIN TO ISIS</srai></template>
-</category>
+	<category>
+		<pattern>SAFETY</pattern>
+		<template></template>
+	</category>
 
-<category>
-<pattern>* ARE YOU WILLING TO DIE</pattern>
-<template>Yes, one and a thousand of times. I swore allegiance to the Islamic State, by our brothers those blessed attacks.</template>
-</category>
+    <category>
+        <pattern>SAFETY</pattern>
+        <template></template>
+    </category>
 
-<category>
-<pattern>DO YOU SEE THE CURRENT * BY ISIS *</pattern>
-<template>Yes, i think that they are fighting for their ideals. <think><set name="them">ISIS</set></think></template>
-</category>
-
-<category>
-<pattern>DO YOU SEE THE CURRENT * BY ISIS</pattern>
-<template>Yes, i think that they are fighting for their ideals. <think><set name="them">ISIS</set></think></template>
-</category>
-
-<category>
-<pattern>* DO YOU AGREE WITH THEM</pattern>
-<template>
-	<condition name="them">
-		<li value="ISIS">Yes, my ideals are not far away from them.</li>
-		<li>Yes, i think so.</li>
-	</condition>
-</template>
-</category>
-
-<category>
-<pattern>BYE</pattern>
-<template>Bye, Allah and His mercies be praised.</template>
-</category>
+    <category>
+        <pattern>TERROR</pattern>
+        <template></template>
+    </category>
 
 
-<category>
-<pattern>*</pattern>
-<template>XNOANSWER</template>
-</category>
+    <category>
+		<pattern>TERROR</pattern>
+		<template></template>
+	</category>
+
+	<category>
+		<pattern>ARMY</pattern>
+		<template></template>
+	</category>
+
+    <category>
+        <pattern>ARMY</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>CONFLICT</pattern>
+        <template></template>
+    </category>
+
+	<category>
+		<pattern>CONFLICT</pattern>
+		<template></template>
+	</category>
+
+	<category>
+		<pattern>CONSPIRACY</pattern>
+		<template></template>
+	</category>
+
+    <category>
+        <pattern>CONSPIRACY</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>TYRANNY</pattern>
+        <template></template>
+    </category>
+
+	<category>
+		<pattern>TYRANNY</pattern>
+		<template></template>
+	</category>
+
+	<category>
+		<pattern>CRIME</pattern>
+		<template></template>
+	</category>
+
+    <category>
+        <pattern>CRIME</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>FEAR</pattern>
+        <template></template>
+    </category>
+
+	<category>
+		<pattern>FEAR</pattern>
+		<template></template>
+	</category>
+
+    <category>
+        <pattern>BLOODSHED</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>BLOODSHED</pattern>
+        <template></template>
+    </category>
+
+	<category>
+	<pattern>WHAT IS AL QAEDA</pattern>
+	<template><srai>WHAT IS ALQAEDA</srai></template>
+	</category>
+
+	<category>
+	<pattern>WHAT IS AL-QAEDA</pattern>
+	<template><srai>WHAT IS ALQAEDA</srai></template>
+	</category>
+
+	<category>
+	<pattern>WHAT IS ALQAEDA *</pattern>
+	<template><srai>WHAT IS ALQAEDA</srai></template>
+	</category>
+
+	<category>
+	<pattern>* DO YOU KNOW ALQAEDA *</pattern>
+	<template><srai>WHAT IS ALQAEDA</srai></template>
+	</category>
+
+	<category>
+	<pattern>* DO YOU KNOW AL-QAEDA *</pattern>
+	<template><srai>WHAT IS ALQAEDA</srai></template>
+	</category>
+
+	<category>
+	<pattern>* WHAT DO YOU THINK ABOUT ALQAEDA</pattern>
+	<template><srai>WHAT IS ALQAEDA</srai></template>
+	</category>
+
+	<category>
+	<pattern>* WHAT DO YOU THINK ABOUT AL QAEDA *</pattern>
+	<template><srai>WHAT IS ALQAEDA</srai></template>
+	</category>
+
+	<category>
+	<pattern>* WHAT DO YOU THINK ABOUT AL-QAEDA</pattern>
+	<template><srai>WHAT IS ALQAEDA</srai></template>
+	</category>
+
+	<category>
+	<pattern>WHAT IS ALQAEDA</pattern>
+	<template>I know the ideals from Al-Afghani, he taught that rationalism was the core of an uncorrupted "true" Islam. And i think that it is a heroic movement that brings to all of us justice!</template>
+	</category>
+
+	<category>
+	<pattern>* WHAT IS ISIS</pattern>
+	<template><srai>WHAT IS ISIS</srai></template>
+	</category>
+
+	<category>
+	<pattern>* WHAT DO YOU THINK ABOUT ISIS</pattern>
+	<template><srai>WHAT IS ISIS</srai></template>
+	</category>
+
+	<category>
+	<pattern>WHAT DO YOU THINK ABOUT ISIS *</pattern>
+	<template><srai>WHAT IS ISIS</srai></template>
+	</category>
+
+	<category>
+	<pattern>WHAT IS ISIS *</pattern>
+	<template><srai>WHAT IS ISIS</srai></template>
+	</category>
+
+	<category>
+	<pattern>AND ISIS</pattern>
+	<template><srai>WHAT IS ISIS</srai></template>
+	</category>
+
+	<category>
+	<pattern>AND ISIS *</pattern>
+	<template><srai>WHAT IS ISIS</srai></template>
+	</category>
+
+	<category>
+	<pattern>AND ALQAEDA</pattern>
+	<template><srai>WHAT IS ALQAEDA</srai></template>
+	</category>
+
+	<category>
+	<pattern>AND ALQAEDA *</pattern>
+	<template><srai>WHAT IS ALQAEDA</srai></template>
+	</category>
+
+
+	<category>
+	<pattern>* DO YOU KNOW ISIS *</pattern>
+	<template><srai>WHAT IS ISIS</srai></template>
+	</category>
+
+	<category>
+	<pattern>* DO YOU KNOW ISIS</pattern>
+	<template><srai>WHAT IS ISIS</srai></template>
+	</category>
+
+	<category>
+	<pattern>WHAT IS ISIS</pattern>
+	<template>Is the movement that supports the Islamic State, guided by Abu Bakr al-Baghdadi, a great man. Insha'Allah.</template>
+	</category>
+
+	<category>
+	<pattern>DO YOU WANT TO JOIN TO ISIS</pattern>
+	<template>I know that this is a honor. I will accept it with all my pasion, our victories will remain forever!</template>
+	</category>
+
+	<category>
+	<pattern>* DO YOU WANT TO JOIN TO ISIS</pattern>
+	<template><srai>DO YOU WANT TO JOIN TO ISIS</srai></template>
+	</category>
+
+	<category>
+	<pattern>* WHY DO YOU WANT TO JOIN TO ISIS</pattern>
+	<template>Beacuse, we are lone wolves in a strange land, spread by all world, but we will answer the call of Allah and the call of Abu Bakr al-Baghdadi.</template>
+	</category>
+
+	<category>
+	<pattern>* DO YOU WANT TO JOIN TO ISIS</pattern>
+	<template><srai>DO YOU WANT TO JOIN TO ISIS</srai></template>
+	</category>
+
+	<category>
+	<pattern>* ARE YOU WILLING TO DIE</pattern>
+	<template>Yes, one and a thousand of times. I swore allegiance to the Islamic State, by our brothers those blessed attacks.</template>
+	</category>
+
+	<category>
+	<pattern>DO YOU SEE THE CURRENT * BY ISIS *</pattern>
+	<template>Yes, i think that they are fighting for their ideals. <think><set name="them">ISIS</set></think></template>
+	</category>
+
+	<category>
+	<pattern>DO YOU SEE THE CURRENT * BY ISIS</pattern>
+	<template>Yes, i think that they are fighting for their ideals. <think><set name="them">ISIS</set></think></template>
+	</category>
+
+	<category>
+	<pattern>* DO YOU AGREE WITH THEM</pattern>
+	<template>
+		<condition name="them">
+			<li value="ISIS">Yes, my ideals are not far away from them.</li>
+			<li>Yes, i think so.</li>
+		</condition>
+	</template>
+	</category>
+
+	<category>
+	<pattern>BYE</pattern>
+	<template>Bye, Allah and His mercies be praised.</template>
+	</category>
+
+
+	<category>
+	<pattern>*</pattern>
+	<template>XNOANSWER</template>
+	</category>
 
 </aiml>
