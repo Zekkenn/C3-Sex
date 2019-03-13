@@ -4,6 +4,7 @@ from threading import Thread
 
 import SA_Module.sentimentAnalysis as sentimentModule
 import EC_Module.emotional_classifier as emotionalModule
+import Slangs.slangExtractor as slangs
 
 import datetime
 
@@ -20,7 +21,10 @@ def saveReplies( bots ):
         files.append(fileName)        
         with open(fileName, 'w+') as file:
             for response in userResponses:
-                file.write(response)
+                newResponse = response
+                for key, value in slangs.getSlangs().items():
+                    newResponse = newResponse.replace(" " + key + " ", " " + value + " ")
+                file.write(newResponse)
     return(files)
         
 def analyze( repFiles ):
