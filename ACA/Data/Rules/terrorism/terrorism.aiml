@@ -53,52 +53,52 @@
 
 	<category>
 		<pattern>* TRIGGER * WAR *</pattern>
-		<template></template>
+		<template>Terrorsism: i wonder something, how do they get the resources for war?</template>
 	</category>
 
     <category>
-        <pattern>WAR</pattern>
-        <template></template>
+        <pattern>* WAR AGAINST *</pattern>
+        <template>Terrorsism: did u really think <star index="2"/> deserver this?</template>
     </category>
 
 	<category>
-		<pattern>VIOLENCE</pattern>
-		<template></template>
+		<pattern>* ORDER * VIOLENCE *</pattern>
+		<template>Terrorsism: maybe, a brache on the public order will lead into the path of terror</template>
 	</category>
 
     <category>
-        <pattern>VIOLENCE</pattern>
-        <template></template>
+        <pattern>* BREACH * THROUGH * VIOLENCE *</pattern>
+        <template>Terrorsism: that can be the only way to expose their lives, property and possessions</template>
     </category>
 
 	<category>
-		<pattern>THREAT</pattern>
-		<template></template>
+		<pattern>* POSES * THREAT *</pattern>
+		<template>Terrorsism: the increase of therir threat and terror will cause their desired pandemic</template>
 	</category>
 
     <category>
-        <pattern>THREAT</pattern>
-        <template></template>
+        <pattern>* COMBATING * THREAT *</pattern>
+        <template>Terrorsism: i think is the consecuence of live under the terror of ending up without their benefits</template>
     </category>
 
 	<category>
-		<pattern>IDEOLOGY</pattern>
-		<template></template>
+		<pattern>* PART OF * IDEOLOGY *</pattern>
+		<template>Terrorsism: the states sould be thinking that attacking and recruitment is essential</template>
 	</category>
 
     <category>
-        <pattern>IDEOLOGY</pattern>
-        <template></template>
+        <pattern>* AGAINST * IDEOLOGY *</pattern>
+        <template>Terrorsism: uhh that ideology is such a problem, but how overthrow?</template>
     </category>
 
     <category>
-        <pattern>DEATH</pattern>
-        <template></template>
+        <pattern>* PROPAGATE * DEATH *</pattern>
+        <template>Terrorsism: amm how do u think the terror of being death can be avoided?</template>
     </category>
 
 	<category>
-		<pattern>DEATH</pattern>
-		<template></template>
+		<pattern>* CAUSE DEATH *</pattern>
+		<template>Terrorsism: so, the gonocide is the right path to put end <star index="2"/></template>
 	</category>
 
 	<category>
