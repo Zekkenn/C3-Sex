@@ -101,28 +101,17 @@
 		<template>Terrorsism: so, the gonocide is the right path to put end <star index="2"/></template>
 	</category>
 
-	<category>
-		<pattern>TERRORIST</pattern>
-		<template></template>
-	</category>
+	<!--
+		DANIEL		
+	-->
 
     <category>
         <pattern>TERRORIST</pattern>
         <template></template>
     </category>
 
-    <category>
-        <pattern>WEAPONS</pattern>
-        <template></template>
-    </category>
-
 	<category>
 		<pattern>WEAPONS</pattern>
-		<template></template>
-	</category>
-
-	<category>
-		<pattern>SAFETY</pattern>
 		<template></template>
 	</category>
 
@@ -132,18 +121,7 @@
     </category>
 
     <category>
-        <pattern>TERROR</pattern>
-        <template></template>
-    </category>
-
-
-    <category>
 		<pattern>TERROR</pattern>
-		<template></template>
-	</category>
-
-	<category>
-		<pattern>ARMY</pattern>
 		<template></template>
 	</category>
 
@@ -152,28 +130,13 @@
         <template></template>
     </category>
 
-    <category>
-        <pattern>CONFLICT</pattern>
-        <template></template>
-    </category>
-
 	<category>
 		<pattern>CONFLICT</pattern>
 		<template></template>
 	</category>
 
-	<category>
-		<pattern>CONSPIRACY</pattern>
-		<template></template>
-	</category>
-
     <category>
         <pattern>CONSPIRACY</pattern>
-        <template></template>
-    </category>
-
-    <category>
-        <pattern>TYRANNY</pattern>
         <template></template>
     </category>
 
@@ -183,32 +146,170 @@
 	</category>
 
 	<category>
-		<pattern>CRIME</pattern>
-		<template></template>
-	</category>
+        <pattern>RIOTING</pattern>
+        <template></template>
+    </category> 
 
     <category>
-        <pattern>CRIME</pattern>
+        <pattern>DISCORD</pattern>
         <template></template>
     </category>
 
     <category>
-        <pattern>FEAR</pattern>
+        <pattern>BLOODSHED</pattern>
         <template></template>
     </category>
+
+    <category>
+        <pattern>ENEMY</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>ALERT</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>FREEDOM</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>PATRIOT</pattern>
+        <template></template>
+    </category>
+
+    <!--
+		SEBASTIAN	
+	-->
 
 	<category>
+        <pattern>BOMB</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>EXTREMISM</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>RELIGIOUS</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>REVOLT</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>IMTIMIDATION</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>SHOOTING</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>STATE</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>EXPLOSION</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>TARGET</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>DIPLOMACY</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>ILLEGAL</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>AFFAIRS</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>SYSTEM</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>ASSASSINATION</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>DESPOTISM</pattern>
+        <template></template>
+    </category>
+
+    <!--
+		JOSSIE	
+	-->
+
+    <category>
+        <pattern>CRUELTY</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>WARNING</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>INCIDENT</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>ANARCHY</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>MILITARY</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>ASSAULT</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>CHAOS</pattern>
+        <template></template>
+    </category>
+
+    <category>
+        <pattern>WARFARE</pattern>
+        <template></template>
+    </category>
+
+    <category>
 		<pattern>FEAR</pattern>
 		<template></template>
 	</category>
 
-    <category>
-        <pattern>BLOODSHED</pattern>
-        <template></template>
-    </category>
-
-    <category>
-        <pattern>BLOODSHED</pattern>
+	<category>
+        <pattern>CRIME</pattern>
         <template></template>
     </category>
 
