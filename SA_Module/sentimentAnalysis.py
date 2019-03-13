@@ -93,4 +93,8 @@ def sa_measure( replies_file ):
             reps.append(row.strip("\n"))
     with open(replies_file.replace(".txt","_SA.txt"), 'w+') as resultFile:
         for reply in reps:
-            resultFile.write(reply + "," + predict(reply)[0] + "\n")
+            val = predict_proba(reply)
+            if val[0] > 0.7: pred = 'Neg'
+            elif val[1] > 0.7: pred = 'Pos'
+            else: pred = 'Neut'
+            resultFile.write(reply + "," + pred + "\n")
