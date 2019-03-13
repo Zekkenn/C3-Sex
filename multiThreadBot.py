@@ -48,5 +48,5 @@ def main():
         t.join()
     repFiles = saveReplies(bots)
     analyze(repFiles)
-    analytics.getMetrics( bots )
+    print(analytics.getMetrics( bots ))
 main()

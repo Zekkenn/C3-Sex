@@ -25,14 +25,14 @@ def rulesConversationMetric(bots):
         metrics.append( bot.getNumberRulesMatched() / bot.getNumberOfInteractions() )
     return metrics
 
-def recognizedSentiments(bots):
-    metrics = []
-    for bot in bots:
-        metrics.append( "" )
-    return metrics
+#def recognizedSentiments(bots):
+#    metrics = []
+#    for bot in bots:
+#        metrics.append( "" )
+#    return metrics
 
 def getMetrics(bots):
     timeByConversationMetric = timeConversationMetric(bots)
     rulesByConversationMetric = rulesConversationMetric(bots)
-    recognizedSentimentsMetric = recognizedSentiments(bots)
-    return [ timeByConversationMetric, rulesByConversationMetric, recognizedSentimentsMetric ]
+    #recognizedSentimentsMetric = recognizedSentiments(bots)
+    return [ timeByConversationMetric, rulesByConversationMetric ]
