@@ -76,6 +76,7 @@ def predict( data ):
     countvec = CountVectorizer(min_df= 5, tokenizer=tokenize, stop_words=stopwords.words('english'), vocabulary=test)
     dtm = pd.DataFrame(countvec.fit_transform(df['text']).toarray(), columns=countvec.get_feature_names(), index=None)
     dtm['class'] = df['class']
+    print( clf.predict_proba( dtm.drop('class', axis=1) ) )
     return clf.predict( dtm.drop('class', axis=1) )
 
 def predict_proba( data ):

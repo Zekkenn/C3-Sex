@@ -2,26 +2,37 @@ import os
 import time
 import gc
 import math
+import statistics 
 
-class Analyze(object):
+def calculate(time, expected):
+    return 2/(1 + math.exp( (-time) / (expected/2) ) )
 
+def getTimeMetric(bot):
+    medianTime = (statistics.median( bot.getTimeEachResponse() )/60)
+    finalTime = (bot.getTimeOfConversation()/60)
+    medianLen = statistics.median( bot.getLenEachPost() )/150
+    return calculate( medianTime, medianLen ) * calculate( finalTime, 5 )
 
-    def __openConnection(self):
-        """__openConnection()
+def timeConversationMetric(bots):
+    metrics = []
+    for bot in bots:
+        metrics.append( getTimeMetric(bot) )
+    return metrics
 
-        """
+def rulesConversationMetric(bots):
+    metrics = []
+    for bot in bots:
+        metrics.append( bot.getNumberRulesMatched() / bot.getNumberOfInteractions() )
+    return metrics
 
-        self.__conversation = []
+def recognizedSentiments(bots):
+    metrics = []
+    for bot in bots:
+        metrics.append( "" )
+    return metrics
 
-        self.__currentLength = 0
-
-        # Setting Topics
-        time.sleep(5)
-        topics = self.__driver.find_element_by_xpath("//input[contains(@class,'newtopicinput')]")
-        topics.send_keys("games")
-        self.__driver.find_element_by_xpath("//img[contains(@id, 'textbtn')]").click()
-        time.sleep(5)
-        first = True ; first_time = 0
-
-    def calculate(self, time):
-        return 2/(1 + math.exp( time / 10 ) )
+def getMetrics(bots):
+    timeByConversationMetric = timeConversationMetric(bots)
+    rulesByConversationMetric = rulesConversationMetric(bots)
+    recognizedSentimentsMetric = recognizedSentiments(bots)
+    return [ timeByConversationMetric, rulesByConversationMetric, recognizedSentimentsMetric ]

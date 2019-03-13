@@ -34,9 +34,10 @@ class Extractor(object):
         self.__driver.get("https://www.omegle.com")
 
         self.__conversation = []
-        self.__metricsByConversation = []
+        self.__lenConversation = []
         self.__timeResponse = []
-        self.__currentLength = 0;
+        self.__currentLength = 0
+        self.__timeOfConversation = 0
 
         # Setting Topics
         time.sleep(5)
@@ -56,7 +57,7 @@ class Extractor(object):
             try:
                 self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg disabled')]")
                 # Analize Data - Conversation Ended
-                last_time_sec = time.clock() - first_time
+                self.__timeOfConversation = time.clock() - first_time
                 break
             except :
                 self.response( userResponse )
@@ -83,10 +84,11 @@ class Extractor(object):
         if ( words != "" ):
             # Bot Response
             self.__finalTimeUserResponse = time.clock()
-            botResponse = self.__predictor.predict(self.__session_id, words.lower())
+            botResponse = self.__predictor.predict(self.__session_id, words.lower(), len(self.__conversation))
             if ( botResponse.strip() != "" and botResponse != None ): 
                 self.__currentLength += 1
                 self.__conversation.append(words)
+                self.__lenConversation.append( len(words) )
                 self.__timeResponse.append( self.__finalTimeUserResponse - self.__initTimeUserResponse )
                 textarea = self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg')]")
                 textarea.send_keys(botResponse)
@@ -104,3 +106,18 @@ class Extractor(object):
 
     def getConversation(self):
         return self.__conversation
+
+    def getTimeOfConversation(self):
+        return self.__timeOfConversation
+
+    def getTimeEachResponse(self):
+        return self.__timeResponse 
+
+    def getNumberRulesMatched(self):
+        return self.__predictor.getNumberMatchedRules()
+
+    def getLenEachPost(self):
+        return self.__lenConversation
+
+    def getNumberOfInteractions(self):
+        return len(self.__conversation)

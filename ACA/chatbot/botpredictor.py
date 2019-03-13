@@ -63,6 +63,8 @@ class BotPredictor(object):
         # Match rules
         self.__numberMatchedRules = 0
 
+        self.__terrorismPost = []
+
         # Restore model rules
         if os.path.exists(brain_file_name):
             print("# Loading from brain file ... ")
@@ -87,7 +89,10 @@ class BotPredictor(object):
     def getNumberMatchedRules(self):
         return self.__numberMatchedRules
 
-    def predict(self, session_id, question):
+    def getTerrorismPost(self):
+        return self.__terrorismPost
+
+    def predict(self, session_id, question, idPost = -1):
         chat_session = self.session_data.get_session(session_id)
         chat_session.before_prediction()  # Reset before each prediction
 
@@ -98,7 +103,10 @@ class BotPredictor(object):
         pat_matched, new_sentence, para_list = check_patterns_and_replace(question)
         retrival_response = self.kmodel.respond(question)
         if 'XNOANSWER' not in retrival_response:
-            self.__numberMatchedRules += 1
+            if 'Terrorsism:' in retrival_response:
+                self.__numberMatchedRules += 1
+                self.__terrorismPost.append( (question, idPost) )
+                retrival_response = retrival_response[11:]
             return retrival_response
         for pre_time in range(2):
             tokens = nltk.word_tokenize(new_sentence.lower())

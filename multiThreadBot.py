@@ -4,6 +4,7 @@ from threading import Thread
 
 import SA_Module.sentimentAnalysis as sentimentModule
 import EC_Module.emotional_classifier as emotionalModule
+import analytics
 
 import datetime
 
@@ -19,8 +20,8 @@ def saveReplies( bots ):
         fileName = PROJECT_ROOT + "\\UsersReplies\\" + str(datetime.datetime.now()).replace(":","_").replace("-","_").replace(" ","_").replace(".","_") + ".txt"
         files.append(fileName)        
         with open(fileName, 'w+') as file:
-            for response in userResponses:
-                file.write(response)
+            for i in range(0, len(userResponses)):
+                file.write(userResponses[i])
     return(files)
         
 def analyze( repFiles ):
@@ -32,14 +33,16 @@ def analyze( repFiles ):
 def main():
     bots = list()
     threads = list()
-    for _ in range(0,BOTS_N):
+    for i in range(0,BOTS_N):
         a = Extractor()
         bots.append(a)
         thread = Thread(target = startBot, args = (a, ))
         threads.append( thread )
-        thread.start()
+    for t in threads:
+        t.start()
     for t in threads:
         t.join()
     repFiles = saveReplies(bots)
     analyze(repFiles)
+    analytics.getMetrics( bots )
 main()
