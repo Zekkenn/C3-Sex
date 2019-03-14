@@ -106,78 +106,78 @@
 	-->
 
     <category>
-        <pattern>TERRORIST</pattern>
-        <template></template>
+        <pattern>* TERRORIST *</pattern>
+        <template>Terrorsism: I would say I am able to do it </template>
     </category>
 
 	<category>
-		<pattern>WEAPONS</pattern>
-		<template></template>
+		<pattern>* WEAPONS *</pattern>
+		<template>Terrorsism: Using weapons may be essential and crucial </template>
 	</category>
 
     <category>
-        <pattern>SAFETY</pattern>
-        <template></template>
+        <pattern>* SAFETY *</pattern>
+        <template>Terrorsism: safety is just subjective </template>
     </category>
 
     <category>
-		<pattern>TERROR</pattern>
-		<template></template>
+		<pattern>* TERROR *</pattern>
+		<template>Terrorsism: they may deserve terror </template>
 	</category>
 
     <category>
-        <pattern>ARMY</pattern>
-        <template></template>
+        <pattern>* ARMY *</pattern>
+        <template>Terrorsism: Army may not defer real warriors</template>
     </category>
 
 	<category>
-		<pattern>CONFLICT</pattern>
-		<template></template>
+		<pattern>* CONFLICT *</pattern>
+		<template>Terrorsism: conflict is required to reach high value goals </template>
 	</category>
 
     <category>
-        <pattern>CONSPIRACY</pattern>
-        <template></template>
+        <pattern>* CONSPIRACY *</pattern>
+        <template>Terrorsism: I believe conspiracy can be a smart tactic </template>
     </category>
 
 	<category>
-		<pattern>TYRANNY</pattern>
-		<template></template>
+		<pattern>* TYRANNY *</pattern>
+		<template>Terrorsism: tyranny should not last forever </template>
 	</category>
 
 	<category>
-        <pattern>RIOTING</pattern>
-        <template></template>
+        <pattern>* RIOTING *</pattern>
+        <template>Terrorsism: rioting definitely generates chaos </template>
     </category> 
 
     <category>
-        <pattern>DISCORD</pattern>
-        <template></template>
+        <pattern>* DISCORD *</pattern>
+        <template>Terrorsism: I believe discord must be managed in a smart way </template>
     </category>
 
     <category>
-        <pattern>BLOODSHED</pattern>
-        <template></template>
+        <pattern>* BLOODSHED *</pattern>
+        <template>Terrorsism: a bloodshed may be deserved sometimes </template>
     </category>
 
     <category>
-        <pattern>ENEMY</pattern>
-        <template></template>
+        <pattern>* ENEMY *</pattern>
+        <template>Terrorsism: enemies can be everywhere </template>
     </category>
 
     <category>
-        <pattern>ALERT</pattern>
-        <template></template>
+        <pattern>* ALERT *</pattern>
+        <template>Terrorsism: we may not want to generate an early alert </template>
     </category>
 
     <category>
-        <pattern>FREEDOM</pattern>
-        <template></template>
+        <pattern>* FREEDOM *</pattern>
+        <template>Terrorsism: freedom should be appreciate </template>
     </category>
 
     <category>
-        <pattern>PATRIOT</pattern>
-        <template></template>
+        <pattern>* PATRIOT *</pattern>
+        <template>Terrorsism: patriots can be a defense line  </template>
     </category>
 
     <!--
@@ -264,53 +264,53 @@
 	-->
 
     <category>
-        <pattern>CRUELTY</pattern>
-        <template></template>
+        <pattern>* DEMOSTRATION * CRUELTY *</pattern>
+        <template>Terrorsism: they almost always concern acts of cruelty against citizens, when it should be only the government</template>
     </category>
 
     <category>
-        <pattern>WARNING</pattern>
-        <template></template>
+        <pattern>* WARNING * MESSAGE *</pattern>
+        <template>Terrorsism: i think a warning message will points out risks of injury or accidents on civilians</template>
     </category>
 
     <category>
-        <pattern>INCIDENT</pattern>
-        <template></template>
+        <pattern>* INCIDENT * ATTACKED *</pattern>
+        <template>Terrorsism: even an small incident triggers a full-scale panic attack, which, if this spiral continues, may become the first of many</template>
     </category>
 
     <category>
-        <pattern>ANARCHY</pattern>
-        <template></template>
+        <pattern>* ANARCHY * LAW *</pattern>
+        <template>Terrorsism: probably they use anarchy in order to destabilize the regime and justify a return to order</template>
     </category>
 
     <category>
-        <pattern>MILITARY</pattern>
-        <template></template>
+        <pattern>* AGAINST * MILITARY *</pattern>
+        <template>Terrorsism: well, the use of such weapons against military objectives in populated areas would cause excessive civilians losses</template>
     </category>
 
     <category>
-        <pattern>ASSAULT</pattern>
-        <template></template>
+        <pattern>* PLANNING * ASSAULT *</pattern>
+        <template>Terrorsism: mmm, i read that violent attacks (like murders, injuries, assaults) are very often commited by group with ideology differences</template>
     </category>
 
     <category>
-        <pattern>CHAOS</pattern>
-        <template></template>
+        <pattern>* STRIKES * CHAOS *</pattern>
+        <template>Terrorsism: the strike could be that chaotic that it is impossible to carry out checks even if all the avaliable resources are deployed</template>
     </category>
 
     <category>
-        <pattern>WARFARE</pattern>
-        <template></template>
+        <pattern>* WARFARE * DESTRUCTION *</pattern>
+        <template>Terrorsism: i've read that modern armaments, even with their deadly precision, result in collateral damage and massive destruction</template>
     </category>
 
     <category>
-		<pattern>FEAR</pattern>
-		<template></template>
+		<pattern>* SPREAD * FEAR *</pattern>
+		<template>Terrorsism: so, that fear could be capable of undermine the authority of the state</template>
 	</category>
 
 	<category>
-        <pattern>CRIME</pattern>
-        <template></template>
+        <pattern>* CRIME * AGAINST *</pattern>
+        <template>Terrorsism: doing so, such crimes can gravely disturbs the international peace and security</template>
     </category>
 
 	<category>
