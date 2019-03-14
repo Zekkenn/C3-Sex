@@ -87,14 +87,19 @@ def predict_proba( data ):
     return clf.predict_proba( dtm.drop('class', axis=1) )
 
 def sa_measure( replies_file ):
-    reps = list()
+    reps = list();
+    sentiments = [0, 0, 0]
     with open(replies_file, 'r') as file:
         for row in file.readlines():
             reps.append(row.strip("\n"))
     with open(replies_file.replace(".txt","_SA.txt"), 'w+') as resultFile:
         for reply in reps:
             val = predict_proba(reply)
-            if val[0] > 0.7: pred = 'Neg'
-            elif val[1] > 0.7: pred = 'Pos'
-            else: pred = 'Neut'
+            if val[0] > 0.7: 
+                pred = 'Neg'; sentiments[0] += 1
+            elif val[1] > 0.7: 
+                pred = 'Pos'; sentiments[1] += 1
+            else: 
+                pred = 'Neut'; sentiments[2] += 1
             resultFile.write(reply + "," + pred + "\n")
+    return sentiments

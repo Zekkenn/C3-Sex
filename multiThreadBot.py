@@ -28,13 +28,26 @@ def saveReplies( bots ):
                 file.write(newResponse)
     return(files)
         
+def saveMetrics( emotions, sentiments, metrics, files ):
+    fileName = PROJECT_ROOT + "\\UsersReplies\\" + str(datetime.datetime.now()).replace(":","_").replace("-","_").replace(" ","_").replace(".","_") + "_ALLMETRICS" + ".txt"
+    with open(fileName + "_Metrics.txt", 'w+') as file:
+        file.write("Negative Sentiments; Positive Sentiments; Neutral Sentiments; Time Metric; Rules Triggered Metric\n")
+        for i in range( len(files) ):
+            suma = emotions[i][0] + emotions[i][1] + emotions[i][2]
+            file.write( str(emotions[i][0]/suma) + ";" + str(emotions[i][1]/suma) + ";" + str(emotions[i][2]/suma) + ";" + str( metrics[i][0] ) + ";" + str( metrics[i][1] ) )
+            
+
 def analyze( repFiles ):
+    sentiments = []
+    emotions = []
     for file in repFiles:
         # Sentiment Analysis
-        sentimentModule.sa_measure(file)
+        sentiments.append( sentimentModule.sa_measure(file) )
         emotionalModule.ec_measure(file)
+    return sentiments, emotions
 
-def main():
+if __name__ == '__main__':
+
     bots = list()
     threads = list()
     for i in range(0,BOTS_N):
@@ -44,9 +57,12 @@ def main():
         threads.append( thread )
     for t in threads:
         t.start()
+        t.join()
     for t in threads:
         t.join()
+    print("==============================================================================================================")
     repFiles = saveReplies(bots)
-    analyze(repFiles)
-    print(analytics.getMetrics( bots ))
-main()
+    emotionsAndSentiments = analyze(repFiles)
+    metrics = analytics.getMetrics( bots )
+    saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, files )
+

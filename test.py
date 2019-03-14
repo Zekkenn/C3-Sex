@@ -58,6 +58,7 @@ class Extractor(object):
                 self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg disabled')]")
                 # Analize Data - Conversation Ended
                 self.__timeOfConversation = time.clock() - first_time
+                print("=================================================SALIO==============================================")
                 break
             except :
                 self.response( userResponse )

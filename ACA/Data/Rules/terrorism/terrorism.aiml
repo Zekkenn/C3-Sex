@@ -185,78 +185,78 @@
 	-->
 
 	<category>
-        <pattern>BOMB</pattern>
-        <template></template>
-    </category>
+        <pattern>* BOMB *</pattern>
+        <template>Terrorsism: sometimes we must take hard decisions</template>
+    </category>    
 
     <category>
-        <pattern>EXTREMISM</pattern>
-        <template></template>
+        <pattern>* EXTREMISM *</pattern>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>RELIGIOUS</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>REVOLT</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>IMTIMIDATION</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>SHOOTING</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>STATE</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>EXPLOSION</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>TARGET</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>DIPLOMACY</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>ILLEGAL</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>AFFAIRS</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>SYSTEM</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>ASSASSINATION</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <category>
         <pattern>DESPOTISM</pattern>
-        <template></template>
+        <template>Terrorsism: </template>
     </category>
 
     <!--
