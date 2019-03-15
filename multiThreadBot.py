@@ -28,13 +28,14 @@ def saveReplies( bots ):
                 file.write(newResponse)
     return(files)
         
-def saveMetrics( emotions, sentiments, metrics, files ):
+def saveMetrics( emotions, sentiments, timeMetric, rulesMetric, files ):
     fileName = PROJECT_ROOT + "\\UsersReplies\\" + str(datetime.datetime.now()).replace(":","_").replace("-","_").replace(" ","_").replace(".","_") + "_ALLMETRICS" + ".txt"
     with open(fileName + "_Metrics.txt", 'w+') as file:
         file.write("Negative Sentiments; Positive Sentiments; Neutral Sentiments; Time Metric; Rules Triggered Metric\n")
         for i in range( len(files) ):
             suma = emotions[i][0] + emotions[i][1] + emotions[i][2]
-            file.write( str(emotions[i][0]/suma) + ";" + str(emotions[i][1]/suma) + ";" + str(emotions[i][2]/suma) + ";" + str( metrics[i][0] ) + ";" + str( metrics[i][1] ) )
+            suma = 1 if suma == 0 else suma
+            file.write( str(emotions[i][0]/suma) + ";" + str(emotions[i][1]/suma) + ";" + str(emotions[i][2]/suma) + ";" + str( timeMetric[i] ) + ";" + str( rulesMetric[i] ) )
             
 
 def analyze( repFiles ):
@@ -63,14 +64,14 @@ def firstImplementation():
     repFiles = saveReplies(bots)
     emotionsAndSentiments = analyze(repFiles)
     metrics = analytics.getMetrics( bots )
-    saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, repFiles )
+    #saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, repFiles )
 
 if __name__ == '__main__':
+    a = Extractor()
     while (True):
-        a = Extractor()
         a.moti()
-        print("==============================================================================================================")
         repFiles = saveReplies([a])
         emotionsAndSentiments = analyze(repFiles)
-        metrics = analytics.getMetrics( [a] )
-        saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, repFiles )
+        timeMetric, rulesMetric = analytics.getMetrics( [a] )
+        saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
+        a.reset()

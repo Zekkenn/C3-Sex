@@ -11,7 +11,7 @@ def getTimeMetric(bot):
     medianTime = (statistics.median( bot.getTimeEachResponse() )/60)
     finalTime = (bot.getTimeOfConversation()/60)
     medianLen = statistics.median( bot.getLenEachPost() )/150
-    return calculate( medianTime, medianLen ) * calculate( finalTime, 5 )
+    return calculate( medianTime, (1 if (medianLen < 1) else medianLen) ) * calculate( finalTime, 5 )
 
 def timeConversationMetric(bots):
     metrics = []
@@ -22,7 +22,8 @@ def timeConversationMetric(bots):
 def rulesConversationMetric(bots):
     metrics = []
     for bot in bots:
-        metrics.append( bot.getNumberRulesMatched() / bot.getNumberOfInteractions() )
+        N = bot.getNumberOfInteractions()
+        metrics.append( bot.getNumberRulesMatched() / ( 1 if N == 0 else N ) )
     return metrics
 
 #def recognizedSentiments(bots):
@@ -35,4 +36,4 @@ def getMetrics(bots):
     timeByConversationMetric = timeConversationMetric(bots)
     rulesByConversationMetric = rulesConversationMetric(bots)
     #recognizedSentimentsMetric = recognizedSentiments(bots)
-    return [ timeByConversationMetric, rulesByConversationMetric ]
+    return timeByConversationMetric, rulesByConversationMetric

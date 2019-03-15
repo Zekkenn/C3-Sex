@@ -18,12 +18,14 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 class Extractor(object):
 
+    def __init__(self):
+
+        self.__init = True
 
     def __openConnection(self):
         """__openConnection()
 
         """
-
         # Start Chatbot Session
         corp_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Corpus')
         knbs_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Variety')
@@ -33,27 +35,31 @@ class Extractor(object):
         self.__driver = webdriver.Chrome('chromedriver')
         self.__driver.get("https://www.omegle.com")
 
-        self.__conversation = []
-        self.__lenConversation = []
-        self.__timeResponse = []
-        self.__currentLength = 0
-        self.__timeOfConversation = 0
+        if ( self.__init ):
 
-        self.__sess = tf.Session()
-        self.__predictor = BotPredictor(self.__sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
-                                 result_dir=res_dir, aiml_dir=rules_dir,
-                                 result_file='basic')
-        self.__session_id = self.__predictor.session_data.add_session()
-        self.__initTimeUserResponse = 0
+            self.__conversation = []
+            self.__lenConversation = [0]
+            self.__timeResponse = [0]
+            self.__currentLength = 0
+            self.__timeOfConversation = 0
+
+            self.__sess = tf.Session()
+            self.__predictor = BotPredictor(self.__sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
+                                    result_dir=res_dir, aiml_dir=rules_dir,
+                                    result_file='basic')
+            self.__session_id = self.__predictor.session_data.add_session()
+            self.__initTimeUserResponse = 0
+            self.__init = False
         userResponse = False
 
         # Setting Topics
         topics = self.__driver.find_element_by_xpath("//input[contains(@class,'newtopicinput')]")
-        topics.send_keys("games")
+        topics.send_keys("freedom, religion, god, praise, faith")
         self.__driver.find_element_by_xpath("//img[contains(@id, 'textbtn')]").click()
         first = True ; first_time = 0
-
+        time.sleep(4)
         while(True):
+            if ( (time.clock() - first_time)/60 >= 5 ): break
             try:
                 i = 0
                 while ( i < 8 ):
@@ -66,7 +72,10 @@ class Extractor(object):
                 #self.__driver.find_element_by_xpath("//button[contains(@class, 'disconnectbtn')]").click()
                 break
             except :
-                self.response( userResponse )
+                try: 
+                    self.response( userResponse )
+                except:
+                    break
                 if (first):
                     first_time = time.clock()
                     first = False
@@ -127,3 +136,11 @@ class Extractor(object):
 
     def getNumberOfInteractions(self):
         return len(self.__conversation)
+
+    def reset(self):
+        self.__conversation = []
+        self.__lenConversation = [0]
+        self.__timeResponse = [0]
+        self.__currentLength = 0
+        self.__timeOfConversation = 0
+        self.__initTimeUserResponse = 0
