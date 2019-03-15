@@ -25,7 +25,7 @@ def saveReplies( bots ):
                 newResponse = response
                 for key, value in slangs.getSlangs().items():
                     newResponse = newResponse.replace(" " + key + " ", " " + value + " ")
-                file.write(newResponse)
+                file.write(newResponse + "\n")
     return(files)
         
 def saveMetrics( emotions, sentiments, timeMetric, rulesMetric, files ):
@@ -35,7 +35,7 @@ def saveMetrics( emotions, sentiments, timeMetric, rulesMetric, files ):
         for i in range( len(files) ):
             suma = emotions[i][0] + emotions[i][1] + emotions[i][2]
             suma = 1 if suma == 0 else suma
-            file.write( str(emotions[i][0]/suma) + ";" + str(emotions[i][1]/suma) + ";" + str(emotions[i][2]/suma) + ";" + str( timeMetric[i] ) + ";" + str( rulesMetric[i] ) )
+            file.write( str(emotions[i][0]/suma) + ";" + str(emotions[i][1]/suma) + ";" + str(emotions[i][2]/suma) + ";" + str( timeMetric[i] ) + ";" + str( rulesMetric[i] ) + "\n")
             
 
 def analyze( repFiles ):
