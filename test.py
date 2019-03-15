@@ -39,13 +39,6 @@ class Extractor(object):
         self.__currentLength = 0
         self.__timeOfConversation = 0
 
-        # Setting Topics
-        time.sleep(5)
-        topics = self.__driver.find_element_by_xpath("//input[contains(@class,'newtopicinput')]")
-        topics.send_keys("games")
-        self.__driver.find_element_by_xpath("//img[contains(@id, 'textbtn')]").click()
-        time.sleep(5)
-        first = True ; first_time = 0
         self.__sess = tf.Session()
         self.__predictor = BotPredictor(self.__sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
                                  result_dir=res_dir, aiml_dir=rules_dir,
@@ -53,12 +46,24 @@ class Extractor(object):
         self.__session_id = self.__predictor.session_data.add_session()
         self.__initTimeUserResponse = 0
         userResponse = False
+
+        # Setting Topics
+        topics = self.__driver.find_element_by_xpath("//input[contains(@class,'newtopicinput')]")
+        topics.send_keys("games")
+        self.__driver.find_element_by_xpath("//img[contains(@id, 'textbtn')]").click()
+        first = True ; first_time = 0
+
         while(True):
             try:
-                self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg disabled')]")
+                i = 0
+                while ( i < 8 ):
+                    self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg disabled')]")
+                    i += 1
+                    time.sleep(2)
                 # Analize Data - Conversation Ended
                 self.__timeOfConversation = time.clock() - first_time
                 print("=================================================SALIO==============================================")
+                #self.__driver.find_element_by_xpath("//button[contains(@class, 'disconnectbtn')]").click()
                 break
             except :
                 self.response( userResponse )
@@ -66,7 +71,7 @@ class Extractor(object):
                     first_time = time.clock()
                     first = False
             time.sleep(2)
-        #self.__driver.quit()
+        self.__driver.quit()
         
     def response(self, userResponse):
         inputs = self.__driver.find_elements(By.XPATH, "//div[contains(@class, 'logitem')]/p[contains(@class, 'msg')]")

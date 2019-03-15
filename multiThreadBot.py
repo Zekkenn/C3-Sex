@@ -46,8 +46,7 @@ def analyze( repFiles ):
         emotionalModule.ec_measure(file)
     return sentiments, emotions
 
-if __name__ == '__main__':
-
+def firstImplementation():
     bots = list()
     threads = list()
     for i in range(0,BOTS_N):
@@ -64,5 +63,14 @@ if __name__ == '__main__':
     repFiles = saveReplies(bots)
     emotionsAndSentiments = analyze(repFiles)
     metrics = analytics.getMetrics( bots )
-    saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, files )
+    saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, repFiles )
 
+if __name__ == '__main__':
+    while (True):
+        a = Extractor()
+        a.moti()
+        print("==============================================================================================================")
+        repFiles = saveReplies([a])
+        emotionsAndSentiments = analyze(repFiles)
+        metrics = analytics.getMetrics( [a] )
+        saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, repFiles )
