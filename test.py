@@ -10,6 +10,7 @@ import gc
 import tensorflow as tf
 import SA_Module.sentimentAnalysis as sentimentModule
 import analytics as analize
+import Slangs.slangExtractor as slangs
 
 from settings import PROJECT_ROOT
 from ACA.chatbot.botpredictor import BotPredictor
@@ -36,33 +37,33 @@ class Extractor(object):
         self.__driver.get("https://www.omegle.com")
 
         if ( self.__init ):
-
-            self.__conversation = []
-            self.__lenConversation = [0]
-            self.__timeResponse = [0]
-            self.__currentLength = 0
-            self.__timeOfConversation = 0
-
             self.__sess = tf.Session()
             self.__predictor = BotPredictor(self.__sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
                                     result_dir=res_dir, aiml_dir=rules_dir,
                                     result_file='basic')
-            self.__session_id = self.__predictor.session_data.add_session()
-            self.__initTimeUserResponse = 0
-            self.__init = False
+        self.__session_id = self.__predictor.session_data.add_session()
+        self.__conversation = []
+        self.__lenConversation = [0]
+        self.__timeResponse = [0]
+        self.__currentLength = 0
+        self.__timeOfConversation = 0
+        self.__initTimeUserResponse = 0
+        self.__init = False
         userResponse = False
 
         # Setting Topics
         topics = self.__driver.find_element_by_xpath("//input[contains(@class,'newtopicinput')]")
         topics.send_keys("freedom, religion, god, praise, faith")
         self.__driver.find_element_by_xpath("//img[contains(@id, 'textbtn')]").click()
-        first = True ; first_time = 0
+        first = True ; first_time = time.clock()
         time.sleep(4)
+        print("=======================TEST2============================") 
         while(True):
             if ( (time.clock() - first_time)/60 >= 5 ): break
+            print("=======================TEST3============================") 
             try:
                 i = 0
-                while ( i < 8 ):
+                while ( i < 10 ):
                     self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg disabled')]")
                     i += 1
                     time.sleep(2)
@@ -72,9 +73,14 @@ class Extractor(object):
                 #self.__driver.find_element_by_xpath("//button[contains(@class, 'disconnectbtn')]").click()
                 break
             except :
-                try: 
-                    self.response( userResponse )
+                try:
+                    print("=======================TEST============================") 
+                    try:
+                        self.response( userResponse )
+                    except:
+                        print("=======================TEST1============================")
                 except:
+                    print("=======================BREAK============================")
                     break
                 if (first):
                     first_time = time.clock()
@@ -99,6 +105,8 @@ class Extractor(object):
         if ( words != "" ):
             # Bot Response
             self.__finalTimeUserResponse = time.clock()
+            for key, value in slangs.getSlangs().items():
+                words = words.replace(" " + key + " ", " " + value + " ")
             botResponse = self.__predictor.predict(self.__session_id, words.lower(), len(self.__conversation))
             if ( botResponse.strip() != "" and botResponse != None ): 
                 self.__currentLength += 1

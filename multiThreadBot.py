@@ -22,10 +22,12 @@ def saveReplies( bots ):
         files.append(fileName)        
         with open(fileName, 'w+') as file:
             for response in userResponses:
-                newResponse = response
-                for key, value in slangs.getSlangs().items():
-                    newResponse = newResponse.replace(" " + key + " ", " " + value + " ")
-                file.write(newResponse + "\n")
+                for i in response:
+                    try:
+                        file.write(i)
+                    except:
+                        print("fail")
+                file.write("\n")
     return(files)
         
 def saveMetrics( emotions, sentiments, timeMetric, rulesMetric, files ):

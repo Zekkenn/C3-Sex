@@ -1,1 +1,0 @@
-Negative Sentiments; Positive Sentiments; Neutral Sentiments; Time Metric; Rules Triggered Metric

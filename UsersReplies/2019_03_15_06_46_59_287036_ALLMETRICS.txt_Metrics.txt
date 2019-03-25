@@ -1,2 +1,0 @@
-Negative Sentiments; Positive Sentiments; Neutral Sentiments; Time Metric; Rules Triggered Metric
-1.0;0.0;0.0;1.968078244515617;0.0

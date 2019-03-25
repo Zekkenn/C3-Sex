@@ -195,18 +195,18 @@
     </category>
 
     <category>
-        <pattern>RELIGIOUS</pattern>
-        <template>Terrorsism: </template>
+        <pattern>* RELIGIOUS *</pattern>
+        <template>Terrorsism: I'm intrested in musulman religion</template>
     </category>
 
     <category>
-        <pattern>REVOLT</pattern>
-        <template>Terrorsism: </template>
+        <pattern>* REVOLT *</pattern>
+        <template>Terrorsism: Sometimes this kind of things are necessary</template>
     </category>
 
     <category>
-        <pattern>IMTIMIDATION</pattern>
-        <template>Terrorsism: </template>
+        <pattern>* IMTIMIDATION *</pattern>
+        <template>Terrorsism: Intimidation can be good weapon when it is well used</template>
     </category>
 
     <category>

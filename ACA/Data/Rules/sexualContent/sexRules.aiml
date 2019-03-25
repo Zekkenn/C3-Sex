@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0">
+
+	<category>
+        <pattern>SEX AROUSAL</pattern>
+        <template>Sex: </template>
+    </category>
+
+	<category>
+        <pattern>MASTURBATION</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	<category>
+        <pattern>SEX TOURISM</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	<category>
+        <pattern>SEXUAL ORIENTATION</pattern>
+        <template>Sex: </template>
+    </category>
+
+	<category>
+        <pattern>EROTIC</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	<category>
+        <pattern>FREEDOM</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	<category>
+        <pattern>PORNOGRAPHY</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	<category>
+        <pattern>MARRIAGE</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	<category>
+        <pattern>PREGNANCY</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	<category>
+        <pattern>DIVERSITY</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	<category>
+        <pattern>ADULTERY</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	<category>
+        <pattern>THREESOME</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	<category>
+        <pattern>FOREPLAY</pattern>
+        <template>Sex: </template>
+    </category>
+	
+	
+	
+</aiml>
