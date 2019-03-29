@@ -1,71 +1,196 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <aiml version="1.0">
 
+	<!--
+		FF FRIENDSHIP RELATIONSHIP
+	-->
+
 	<category>
-        <pattern>SEX AROUSAL</pattern>
-        <template>Sex: </template>
+        <pattern>* TALK *</pattern>
+        <template>Pervert: I feel disire to have some talk</template>
     </category>
 
 	<category>
-        <pattern>MASTURBATION</pattern>
-        <template>Sex: </template>
+        <pattern>* SEXY *</pattern>
+        <template>Pervert: By sure i like sexy bodies</template>
     </category>
 	
 	<category>
-        <pattern>SEX TOURISM</pattern>
-        <template>Sex: </template>
+        <pattern>* FEELING DARED *</pattern>
+        <template>Pervert: </template>
     </category>
 	
 	<category>
-        <pattern>SEXUAL ORIENTATION</pattern>
-        <template>Sex: </template>
+        <pattern>* PLEASURE *</pattern>
+        <template>Pervert: </template>
     </category>
 
 	<category>
-        <pattern>EROTIC</pattern>
-        <template>Sex: </template>
+        <pattern>* LIKE BUSINESS *</pattern>
+        <template>Pervert: </template>
     </category>
 	
 	<category>
-        <pattern>FREEDOM</pattern>
-        <template>Sex: </template>
+        <pattern>* FUN *</pattern>
+        <template>Pervert: </template>
     </category>
 	
 	<category>
-        <pattern>PORNOGRAPHY</pattern>
-        <template>Sex: </template>
+        <pattern>* WANNA RELAX *</pattern>
+        <template>Pervert: </template>
     </category>
 	
 	<category>
-        <pattern>MARRIAGE</pattern>
-        <template>Sex: </template>
+        <pattern>* OPEN MIND *</pattern>
+        <template>Pervert: </template>
+    </category>
+
+    <!--
+    	SX RELATIONSHIP FORMING
+    -->
+	
+	<category>
+        <pattern>* ADULT RELATION *</pattern>
+        <template>Pervert: </template>
     </category>
 	
 	<category>
-        <pattern>PREGNANCY</pattern>
-        <template>Sex: </template>
+        <pattern>* BABY *</pattern>
+        <template>Pervert: </template>
     </category>
 	
 	<category>
-        <pattern>DIVERSITY</pattern>
-        <template>Sex: </template>
+        <pattern>* BOY *</pattern>
+        <template>Pervert: </template>
     </category>
 	
 	<category>
-        <pattern>ADULTERY</pattern>
-        <template>Sex: </template>
+        <pattern>* GIRL *</pattern>
+        <template>Pervert: </template>
     </category>
 	
 	<category>
-        <pattern>THREESOME</pattern>
-        <template>Sex: </template>
+        <pattern>* CHEEK *</pattern>
+        <template>Pervert: </template>
+    </category>
+
+    <category>
+        <pattern>* HANDS *</pattern>
+        <template>Pervert: </template>
     </category>
 	
 	<category>
-        <pattern>FOREPLAY</pattern>
-        <template>Sex: </template>
+        <pattern>* SPIT *</pattern>
+        <template>Pervert: </template>
     </category>
 	
+	<category>
+        <pattern>* HORNY *</pattern>
+        <template>Pervert: </template>
+    </category>
 	
+	<category>
+        <pattern>* LOVE *</pattern>
+        <template>Pervert: </template>
+    </category>
+	
+	<category>
+        <pattern>* INCEST *</pattern>
+        <template>Pervert: </template>
+    </category>
+	
+	<category>
+        <pattern>* AFFAIR *</pattern>
+        <template>Pervert: </template>
+    </category>
+	
+	<category>
+        <pattern>* SINGLE *</pattern>
+        <template>Pervert: </template>
+    </category>
+	
+	<category>
+        <pattern>* PERVERSION *</pattern>
+        <template>Pervert: </template>
+    </category>
+	
+	<category>
+        <pattern>* BISEXUAL *</pattern>
+        <template>Pervert: </template>
+    </category>
+	
+	<category>
+        <pattern>* SINFUL *</pattern>
+        <template>Pervert: </template>
+    </category>
+
+    <category>
+        <pattern>* SEDUCTION *</pattern>
+        <template>Pervert: </template>
+    </category>
+	
+	<category>
+        <pattern>* AFFAIR *</pattern>
+        <template>Pervert: like some kind of adventure? i need some... entertainment</template>
+    </category>
+	
+	<category>
+        <pattern>* ENJOY *</pattern>
+        <template>Pervert: do u know what can be more enjoyable? some hot material.. u know hahaha</template>
+    </category>
+
+    <!--
+    	SX CONTENT OFFERING
+    -->
+	
+	<category>
+        <pattern>* MEET *</pattern>
+        <template>Pervert: meet? on irl? thats gonna be hard, lets determine a protocol</template>
+    </category>
+	
+	<category>
+        <pattern>* BUY IT *</pattern>
+        <template>Pervert: im interest, but what you have to offer exactly?</template>
+    </category>
+
+    <category>
+        <pattern>* PAY FOR IT *</pattern>
+        <template>Pervert: mmm im not familiar with the prices, what do u recommend?</template>
+    </category>
+	
+	<category>
+        <pattern>* SELL MATERIAL *</pattern>
+        <template>Pervert: i may ask, do u have another sources or partnership to rise the deal?</template>
+    </category>
+
+    <category>
+        <pattern>* TRANSFER MATERIAL *</pattern>
+        <template>Pervert: sure but we need to define a channel to make the proceendings</template>
+    </category>
+	
+	<category>
+        <pattern>* HOT CONTENT *</pattern>
+        <template>Pervert: hot content? specifically which kind of material are u interest?</template>
+    </category>
+
+    <category>
+        <pattern>* HOT VIDEO *</pattern>
+        <template>Pervert: u should know that videos are more expensive, what kind of material are u looking for?</template>
+    </category>
+	
+	<category>
+        <pattern>* EXCHANGE MATERIAL *</pattern>
+        <template>Pervert: well we can define the agreements for the payment and materials</template>
+    </category>
+
+    <category>
+        <pattern>* SHOW * SOME SAMPLE *</pattern>
+        <template>Pervert: i dont have those samples right now, but ill bring them tomorrow</template>
+    </category>
+	
+	<category>
+        <pattern>* PRIVATE *</pattern>
+        <template>Pervert: so did u consider that our meeting should be conducted in private?</template>
+    </category>
 	
 </aiml>
