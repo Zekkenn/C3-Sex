@@ -107,6 +107,10 @@ class BotPredictor(object):
                 self.__numberMatchedRules += 1
                 self.__terrorismPost.append( (question, idPost) )
                 retrival_response = retrival_response[11:]
+            elif "Pervert:" in retrival_response:
+                self.__numberMatchedRules += 1
+                self.__terrorismPost.append( (question, idPost) )
+                retrival_response = retrival_response[8:]
             return retrival_response
         for pre_time in range(2):
             tokens = nltk.word_tokenize(new_sentence.lower())
