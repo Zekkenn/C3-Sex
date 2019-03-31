@@ -27,7 +27,7 @@ from ACA.chatbot.functiondata import call_function
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 BRAIN_FILE = "brain.dump"
-AIMLS_FILE = "ter-startup.aiml"
+AIMLS_FILE = "hot-startup.aiml"
 
 class BotPredictor(object):
     def __init__(self, session, corpus_dir, knbase_dir, result_dir, aiml_dir, result_file):

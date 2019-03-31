@@ -1,0 +1,19 @@
+<aiml version="1.0">
+    <category>
+        <pattern>LOAD AIML B</pattern>
+        <template>
+            <!-- Load standard basic AIML set -->
+			<learn>ACA/Data/Rules/illegalcontent/atomic.aiml</learn>
+			<learn>ACA/Data/Rules/illegalcontent/client.aiml</learn>
+			<learn>ACA/Data/Rules/illegalcontent/client_profile.aiml</learn>
+			<learn>ACA/Data/Rules/illegalcontent/date.aiml</learn>
+			<learn>ACA/Data/Rules/illegalcontent/default.aiml</learn>
+			<learn>ACA/Data/Rules/illegalcontent/interjection.aiml</learn>
+			<learn>ACA/Data/Rules/illegalcontent/kownledge.aiml</learn>
+			<learn>ACA/Data/Rules/illegalcontent/money.aiml</learn>
+			<learn>ACA/Data/Rules/illegalcontent/psychology.aiml</learn>
+			<learn>ACA/Data/Rules/illegalcontent/salutations.aiml</learn>
+			<learn>ACA/Data/Rules/illegalcontent/hotmaterial.aiml</learn>
+        </template>
+    </category>
+</aiml>

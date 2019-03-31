@@ -14,7 +14,6 @@
 			<learn>ACA/Data/Rules/terrorism/psychology.aiml</learn>
 			<learn>ACA/Data/Rules/terrorism/salutations.aiml</learn>
 			<learn>ACA/Data/Rules/terrorism/terrorism.aiml</learn>
-			<learn>ACA/Data/Rules/sexualContent/sexRules.aiml</learn>
         </template>
     </category>
 </aiml>
