@@ -112,6 +112,8 @@ class BotPredictor(object):
                 self.__terrorismPost.append( (question, idPost) )
                 retrival_response = retrival_response[8:]
             return retrival_response
+        else:
+            print("XNOANSWER")
         for pre_time in range(2):
             tokens = nltk.word_tokenize(new_sentence.lower())
             tmp_sentence = [' '.join(tokens[:]).strip()]
