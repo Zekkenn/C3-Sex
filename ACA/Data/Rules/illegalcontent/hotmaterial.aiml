@@ -6,27 +6,15 @@
 	-->
 
 	<category>
-		<pattern>* NAME *</pattern>
-		<template>Pervert: oh, im olivia</template>	
-	</category>
+        <pattern>* TALK *</pattern>
+        <template>Pervert: I feel disire to have some talk</template>
+    </category>
 
 	<category>
-		<pattern>* M * F *</pattern>
-		<template>Pervert: f and u?</template>	
-	</category>
-
-	<category>
-		<pattern>* TALK *</pattern>
-		<template>Pervert: I feel desire to have some talk </template>
-	</category>	
-		
-
-	<category>
-		<pattern>* SEXY *</pattern>
-		<template>Pervert: By sure I like sexy bodies </template>
-	</category>	
-
-
+        <pattern>* SEXY *</pattern>
+        <template>Pervert: By sure i like sexy bodies</template>
+    </category>
+	
 	<category>
 		<pattern>* DARE *</pattern>
 		<template>Pervert: I am definetely feeling dared today </template>
@@ -61,6 +49,10 @@
 		<template>Pervert: I consider myself open mind </template>
 	</category>
 
+    <!--
+    	SX RELATIONSHIP FORMING
+    -->
+	
 	<category>
         <pattern>* ADULT *</pattern>
         <template>Pervert: I do not like just adults, maybe something new </template>
@@ -98,6 +90,11 @@
 	
 	<category>
         <pattern>* HORNY *</pattern>
+        <template>Pervert: horny is what i look for </template>
+    </category>
+
+    <category>
+        <pattern>HORNY *</pattern>
         <template>Pervert: horny is what i look for </template>
     </category>
 	
@@ -151,11 +148,6 @@
     -->
 	
 	<category>
-		<pattern>* LOOKING FOR *</pattern>
-		<template>Pervert: im looking for u know, some hot material</template>	
-	</category>
-
-	<category>
         <pattern>* MEET *</pattern>
         <template>Pervert: meet can be difficult know as I do not know you </template>
     </category>
@@ -205,7 +197,11 @@
         <template>Pervert: You may consider myself a private and stealthy guy</template>
     </category>
 	
-	<category>
+    <!--
+    	RISK ASSESMENT
+    -->
+
+    <category>
         <pattern>* BOT *</pattern>
         <template>Pervert: If i would be a bot, I would be a sexy one </template>
     </category>
@@ -225,5 +221,171 @@
         <template>Pervert: I a serious guy for business</template>
     </category>
 
-	
+	<category>
+        <pattern>* M *</pattern>
+        <template>F</template>
+    </category>
+
+	<category>
+        <pattern>M *</pattern>
+        <template>F</template>
+    </category>
+
+    <category>
+        <pattern>M</pattern>
+        <template>F</template>
+    </category>
+
+    <category>
+        <pattern>* F *</pattern>
+        <template>F</template>
+    </category>
+
+	<category>
+        <pattern>F *</pattern>
+        <template>F</template>
+    </category>
+
+    <category>
+        <pattern>F</pattern>
+        <template>F</template>
+    </category>
+
+	<category>
+        <pattern>* ASL *</pattern>
+        <template>Pervert: 22, female, nyc</template>
+    </category>
+
+	<category>
+        <pattern>ASL *</pattern>
+        <template>Pervert: 22, female, nyc</template>
+    </category>
+
+    <category>
+        <pattern>ASL</pattern>
+        <template>Pervert: 22, female, nyc</template>
+    </category>
+
+    <category>
+    <pattern>COUNT TO <set>number</set></pattern>
+    <template>
+    <think><set name="count">0</set></think>
+    <condition name="count">
+        <li><value><star/></value></li>
+        <li>
+        <set name="count">
+            <map><name>successor</name><get name="count"/></map>
+        </set>
+        <loop/>
+        </li>
+    </condition>
+    </template>
+    </category>
+
+    <category>
+    <pattern>WHAT * YOU * SAY *</pattern>
+    <template><request index="1" /></template>
+    </category>
+
+    <category>
+    <pattern>FEMALE * MALE *</pattern>
+    <template>Female</template>
+    </category>
+
+    <category>
+    <pattern>* FEMALE * MALE *</pattern>
+    <template>Female</template>
+    </category>
+
+    <category>
+    <pattern>* MALE * FEMALE *</pattern>
+    <template>Female</template>
+    </category>
+
+    <category>
+    <pattern>* M * F *</pattern>
+    <template>Female</template>
+    </category>
+
+    <category>
+    <pattern>M * F *</pattern>
+    <template>Female</template>
+    </category>
+
+    <category>
+    <pattern>M * F</pattern>
+    <template>Female</template>
+    </category>
+
+    <category>
+    <pattern>* F * M *</pattern>
+    <template>Female</template>
+    </category>
+
+    <category>
+    <pattern>* NOT * HUMAN *</pattern>
+    <template>Well, i can tell you that really i am.</template>
+    </category>
+
+    <category>
+    <pattern>KIK * SNAP *</pattern>
+    <template>i prefer have a conversation here.</template>
+    </category>
+
+    <category>
+    <pattern>* KIK * SNAP *</pattern>
+    <template>i prefer have a conversation here.</template>
+    </category>
+
+    <category>
+    <pattern>KIK * SNAP </pattern>
+    <template>i prefer have a conversation here.</template>
+    </category>
+
+    <category>
+    <pattern>* KIK * SNAP</pattern>
+    <template>i prefer have a conversation here.</template>
+    </category>
+
+    <category>
+    <pattern>SNAP * KIK *</pattern>
+    <template>i prefer have a conversation here.</template>
+    </category>
+
+    <category>
+    <pattern>* SNAP * KIK *</pattern>
+    <template>i prefer have a conversation here.</template>
+    </category>
+
+    <category>
+    <pattern>SNAP * KIK </pattern>
+    <template>i prefer have a conversation here.</template>
+    </category>
+
+    <category>
+    <pattern>* SNAP * KIK</pattern>
+    <template>i prefer have a conversation here.</template>
+    </category>
+
+    <category>
+    <pattern>WHAT * KIK </pattern>
+    <template>i don't have, sorry.</template>
+    </category>
+
+    <category>
+    <pattern>WHAT * KIK *</pattern>
+    <template>i don't have, sorry.</template>
+    </category>
+
+    <category>
+    <pattern>WHAT * USERNAME *</pattern>
+    <template>really, i don't have, sorry.</template>
+    </category>
+
+    <category>
+    <pattern>WHAT * USERNAME</pattern>
+    <template>really, i don't have, sorry.</template>
+    </category>
+
 </aiml>
+

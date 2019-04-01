@@ -59,7 +59,7 @@ class Extractor(object):
         time.sleep(4)
         print("=======================TEST2============================") 
         while(True):
-            if ( (time.clock() - first_time)/60 >= 5 ): break
+            if ( (time.clock() - first_time)/60 >= 25 ): break
             print("=======================TEST3============================") 
             try:
                 i = 0
