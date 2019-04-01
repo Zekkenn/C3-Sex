@@ -30,9 +30,7 @@ bag.of.words <- function(data, sparse = 0.999, init = FALSE, test = TRUE){
 
 preproccess.data <- function(data, stemming = TRUE, language = "english"){
   
-  # DELETE ROWS WITH 1 LENGTH SENTENCES
-  pos <- which(sapply(tokenize_words(data$SIT), length) %in% c(0,1,2))
-  if (length(pos) != 0) {data <- data[-pos,]}
+  # CHOOSE LANGUAGE
   lg <- ifelse(language=='english',"en",language)
   
   # CLEAN ALL NON-ALPHANUMERIC CHARACTERS & additional whitespace
