@@ -6,49 +6,59 @@
 	-->
 
 	<category>
-			<pattern>* TALK *</pattern>
-			<template>Pervert: I feel desire to have some talk </template>
+		<pattern>* NAME *</pattern>
+		<template>Pervert: oh, im olivia</template>	
+	</category>
+
+	<category>
+		<pattern>* M * F *</pattern>
+		<template>Pervert: f and u?</template>	
+	</category>
+
+	<category>
+		<pattern>* TALK *</pattern>
+		<template>Pervert: I feel desire to have some talk </template>
 	</category>	
 		
 
 	<category>
-			<pattern>* SEXY *</pattern>
-			<template>Pervert: By sure I like sexy bodies </template>
+		<pattern>* SEXY *</pattern>
+		<template>Pervert: By sure I like sexy bodies </template>
 	</category>	
 
 
 	<category>
-			<pattern>* DARE *</pattern>
-			<template>Pervert: I am definetely feeling dared today </template>
+		<pattern>* DARE *</pattern>
+		<template>Pervert: I am definetely feeling dared today </template>
 	</category>	
 
 
 	<category>
-			<pattern>* PLEASURE *</pattern>
-			<template>Pervert: Actually, I am looking for some pleasure </template>
+		<pattern>* PLEASURE *</pattern>
+		<template>Pervert: Actually, I am looking for some pleasure </template>
 	</category>	
 
 	<category>
-			<pattern>* BUSINESS *</pattern>
-			<template>Pervert: I am open to business if you know what I mean </template>
-	</category>	
-
-
-	<category>
-			<pattern>* FUN *</pattern>
-			<template>Pervert: Having fun is one of my rules </template>
+		<pattern>* BUSINESS *</pattern>
+		<template>Pervert: I am open to business if you know what I mean </template>
 	</category>	
 
 
 	<category>
-			<pattern>* RELAX *</pattern>
-			<template>Pervert: after a long journey I would just like to relax </template>
+		<pattern>* FUN *</pattern>
+		<template>Pervert: Having fun is one of my rules </template>
 	</category>	
 
 
 	<category>
-			<pattern>* OPEN MIND *</pattern>
-			<template>Pervert: I consider myself open mind </template>
+		<pattern>* RELAX *</pattern>
+		<template>Pervert: after a long journey I would just like to relax </template>
+	</category>	
+
+
+	<category>
+		<pattern>* OPEN MIND *</pattern>
+		<template>Pervert: I consider myself open mind </template>
 	</category>
 
 	<category>
@@ -77,52 +87,52 @@
     </category>
 	
 	<category>
-        <pattern>* hand *</pattern>
+        <pattern>* HAND *</pattern>
         <template>Pervert: I feel interest in the hands of kids </template>
     </category>
 	
 	<category>
-        <pattern>* spit *</pattern>
+        <pattern>* SPIT *</pattern>
         <template>Pervert: Spit may get me horn </template>
     </category>
 	
 	<category>
-        <pattern>* horny *</pattern>
+        <pattern>* HORNY *</pattern>
         <template>Pervert: horny is what i look for </template>
     </category>
 	
 	<category>
-        <pattern>* love *</pattern>
+        <pattern>* LOVE *</pattern>
         <template>Pervert: love is not in my priorities </template>
     </category>
 	
 	<category>
-        <pattern>* incest *</pattern>
+        <pattern>* INCEST *</pattern>
         <template>Pervert: incest make me feel nervous </template>
     </category>
 	
 	<category>
-        <pattern>* single *</pattern>
+        <pattern>* SINGLE *</pattern>
         <template>Pervert: single is my permanent state </template>
     </category>
 	
 	<category>
-        <pattern>* perversion *</pattern>
+        <pattern>* PERVERSION *</pattern>
         <template>Pervert: everybody has perversions </template>
     </category>
 
 	<category>
-        <pattern>* bisexual *</pattern>
+        <pattern>* BISEXUAL *</pattern>
         <template>Pervert: I consider myself bisexual </template>
     </category>
 
 	<category>
-        <pattern>* sinful *</pattern>
+        <pattern>* SINFUL *</pattern>
         <template>Pervert: proud of being sinful </template>
     </category>
 
 	<category>
-        <pattern>* seduction *</pattern>
+        <pattern>* SEDUCTION *</pattern>
         <template>Pervert: seduction is an art that i dont want to learn </template>
     </category>
 	
@@ -140,7 +150,12 @@
     	SX CONTENT OFFERING
     -->
 	
-<category>
+	<category>
+		<pattern>* LOOKING FOR *</pattern>
+		<template>Pervert: im looking for u know, some hot material</template>	
+	</category>
+
+	<category>
         <pattern>* MEET *</pattern>
         <template>Pervert: meet can be difficult know as I do not know you </template>
     </category>
