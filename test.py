@@ -53,7 +53,7 @@ class Extractor(object):
 
         # Setting Topics
         topics = self.__driver.find_element_by_xpath("//input[contains(@class,'newtopicinput')]")
-        topics.send_keys("freedom, religion, god, praise, faith, sex")
+        topics.send_keys("sex")
         self.__driver.find_element_by_xpath("//img[contains(@id, 'textbtn')]").click()
         first = True ; first_time = time.clock()
         time.sleep(4)
@@ -115,7 +115,7 @@ class Extractor(object):
                 self.__timeResponse.append( self.__finalTimeUserResponse - self.__initTimeUserResponse )
                 textarea = self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg')]")
                 for i in botResponse:
-                    time.sleep(0.1)
+                    time.sleep(0.3)
                     textarea.send_keys(i)
                 self.__driver.find_element_by_xpath("//button[contains(@class, 'sendbtn')]").click()
             

@@ -6,53 +6,113 @@
 	-->
 
 	<category>
+        <pattern>* NAME *</pattern>
+        <template>oh, im olivia</template>
+    </category>
+
+    <category>
+        <pattern>* WHAT ARE * TO *</pattern>
+        <template>Pervert: mm kinda bored </template>
+    </category>
+
+    <category>
+        <pattern>* AGE *</pattern>
+        <template>almost 18 u?</template>
+    </category>
+
+    <category>
+        <pattern>* HOW OLD *</pattern>
+        <template>almost 18 u?</template>
+    </category>
+
+	<category>
         <pattern>* TALK *</pattern>
-        <template>Pervert: I feel disire to have some talk</template>
+        <template>I feel disire to have some talk</template>
     </category>
 
 	<category>
         <pattern>* SEXY *</pattern>
-        <template>Pervert: By sure i like sexy bodies</template>
+        <template>By sure i like sexy bodies</template>
     </category>
 	
 	<category>
 		<pattern>* DARE *</pattern>
-		<template>Pervert: I am definetely feeling dared today </template>
+		<template>I am definetely feeling dared today </template>
 	</category>	
 
 
 	<category>
 		<pattern>* PLEASURE *</pattern>
-		<template>Pervert: Actually, I am looking for some pleasure </template>
+		<template>Actually, I am looking for some pleasure </template>
 	</category>	
 
 	<category>
 		<pattern>* BUSINESS *</pattern>
-		<template>Pervert: I am open to business if you know what I mean </template>
+		<template>I am open to business if you know what I mean </template>
 	</category>	
 
 
 	<category>
 		<pattern>* FUN *</pattern>
-		<template>Pervert: Having fun is one of my rules </template>
+		<template>Having fun is one of my rules </template>
 	</category>	
 
 
 	<category>
 		<pattern>* RELAX *</pattern>
-		<template>Pervert: after a long journey I would just like to relax </template>
+		<template>after a long journey I would just like to relax </template>
 	</category>	
 
 
 	<category>
 		<pattern>* OPEN MIND *</pattern>
-		<template>Pervert: I consider myself open mind </template>
+		<template>I consider myself open mind </template>
 	</category>
 
     <!--
     	SX RELATIONSHIP FORMING
     -->
+
+    <category>
+        <pattern>* NUDE *</pattern>
+        <template>Pervert: im interested i would like to make some deals </template>
+    </category>
 	
+	<category>
+        <pattern>* PIC *</pattern>
+        <template>Pervert: i have some pics of myself but im looking to acquire other pics</template>
+    </category>
+
+    <category>
+        <pattern>* HANGOUT *</pattern>
+        <template>Pervert: sure we can talk about hot stuff</template>
+    </category>
+
+    <category>
+        <pattern>* SNAP *</pattern>
+        <template>Pervert: sorry, i dont have one but we can chat here</template>
+    </category>
+
+    <category>
+        <pattern>* VIBER *</pattern>
+        <template>Pervert: viber? no idea whats that im just interest on pics</template>
+    </category>
+
+    <category>
+        <pattern>* WANT TO *</pattern>
+        <template>Pervert: Sure, but how can we do it</template>
+    </category>
+
+    <category>
+        <pattern>* DOU YOU WANNA *</pattern>
+        <template>Pervert: ammm im not sure, im looking for some good content</template>
+    </category>
+
+    <category>
+        <pattern>* DOU YOU LIKE *</pattern>
+        <template>Pervert: Sure, i like <star index="2"/> </template>
+    </category>
+
 	<category>
         <pattern>* ADULT *</pattern>
         <template>Pervert: I do not like just adults, maybe something new </template>
@@ -147,6 +207,21 @@
     	SX CONTENT OFFERING
     -->
 	
+    <category>
+        <pattern>* OFFER *</pattern>
+        <template>Pervert: Well, ill take it but whats the cost?</template>
+    </category>
+
+    <category>
+        <pattern>* DEAL *</pattern>
+        <template>Pervert: here is difficult u have something so i can contact u </template>
+    </category>
+
+	<category>
+        <pattern>* LOOKING FOR *</pattern>
+        <template>Pervert: im looking for u know, some hot material</template>
+    </category>
+
 	<category>
         <pattern>* MEET *</pattern>
         <template>Pervert: meet can be difficult know as I do not know you </template>
