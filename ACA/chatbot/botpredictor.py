@@ -23,11 +23,13 @@ from ACA.chatbot.modelcreator import ModelCreator
 from ACA.chatbot.knowledgebase import KnowledgeBase
 from ACA.chatbot.sessiondata import SessionData
 from ACA.chatbot.patternutils import check_patterns_and_replace
+from ACA.chatbot.patternutils import remove_chars_re
 from ACA.chatbot.functiondata import call_function
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 BRAIN_FILE = "brain.dump"
 AIMLS_FILE = "hot-startup.aiml"
+EN_BLACKLIST = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~\''
 
 class BotPredictor(object):
     def __init__(self, session, corpus_dir, knbase_dir, result_dir, aiml_dir, result_file):
@@ -101,7 +103,9 @@ class BotPredictor(object):
             chat_session.after_prediction(question, answer)
             return answer
         pat_matched, new_sentence, para_list = check_patterns_and_replace(question)
-        retrival_response = self.kmodel.respond(question)
+        # Preprocess question by removing undesirable characters
+        retrival_question = remove_chars_re(question, EN_BLACKLIST)
+        retrival_response = self.kmodel.respond("m " + retrival_question + " m")
         if 'XNOANSWER' not in retrival_response:
             if 'Terrorsism:' in retrival_response:
                 self.__numberMatchedRules += 1
