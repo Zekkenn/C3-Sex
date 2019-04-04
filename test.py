@@ -76,6 +76,7 @@ class Extractor(object):
                 try:
                     print("=======================TEST============================") 
                     try:
+                        time.sleep(3)
                         self.response( userResponse )
                     except:
                         print("=======================TEST1============================")
@@ -115,7 +116,7 @@ class Extractor(object):
                 self.__timeResponse.append( self.__finalTimeUserResponse - self.__initTimeUserResponse )
                 textarea = self.__driver.find_element_by_xpath("//textarea[contains(@class,'chatmsg')]")
                 for i in botResponse:
-                    time.sleep(0.3)
+                    time.sleep(0.05)
                     textarea.send_keys(i)
                 self.__driver.find_element_by_xpath("//button[contains(@class, 'sendbtn')]").click()
             
