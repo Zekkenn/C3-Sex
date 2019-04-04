@@ -15,6 +15,11 @@
 """This file is only used at inference time."""
 import re
 
+def remove_chars_re(subj, chars):
+    #remove chars on blacklist
+    subj = re.sub('[' + re.escape(''.join(chars)) + ']', ' ', subj)
+    #remove extra spaces
+    return re.sub(' +', ' ', subj)
 
 def check_patterns_and_replace(question):
     pat_matched, new_sentence, para_list = _check_arithmetic_pattern_and_replace(question)
