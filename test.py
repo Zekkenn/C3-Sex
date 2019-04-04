@@ -108,6 +108,7 @@ class Extractor(object):
             for key, value in slangs.getSlangs().items():
                 words = words.replace(" " + key + " ", " " + value + " ")
             botResponse = self.__predictor.predict(self.__session_id, words.lower(), len(self.__conversation))
+            print("FINAL ASW : " + botResponse)
             if ( botResponse.strip() != "" and botResponse != None ): 
                 self.__currentLength += 1
                 self.__conversation.append(words)

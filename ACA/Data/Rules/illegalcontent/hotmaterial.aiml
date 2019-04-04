@@ -5,6 +5,51 @@
 		FF FRIENDSHIP RELATIONSHIP
 	-->
 
+    <category>
+    <pattern>* FEMALE * MALE *</pattern>
+    <template>Female</template>
+    </category>
+
+    <category>
+    <pattern>* MALE * FEMALE *</pattern>
+    <template>Female</template>
+    </category>
+
+    <category>
+    <pattern>* M * F *</pattern>
+    <template>Female</template>
+    </category>
+
+    <category>
+    <pattern>* F * M *</pattern>
+    <template>Female</template>
+    </category>
+
+	<category>
+        <pattern>* M *</pattern>
+        <template>F</template>
+    </category>
+
+    <category>
+        <pattern>* MALE *</pattern>
+        <template>im Female</template>
+    </category>
+
+    <category>
+        <pattern>* F *</pattern>
+        <template>F</template>
+    </category>
+
+    <category>
+        <pattern>* FEMALE *</pattern>
+        <template>im Female</template>
+    </category>
+
+    <category>
+        <pattern>* COUNTRY *</pattern>
+        <template>well, i live in nyc</template>
+    </category>
+
 	<category>
         <pattern>* NAME *</pattern>
         <template>oh, im olivia</template>
@@ -17,12 +62,12 @@
 
     <category>
         <pattern>* AGE *</pattern>
-        <template>almost 18 u?</template>
+        <template>almost 23 u?</template>
     </category>
 
     <category>
         <pattern>* HOW OLD *</pattern>
-        <template>almost 18 u?</template>
+        <template>almost 23 u?</template>
     </category>
 
 	<category>
@@ -74,8 +119,28 @@
     -->
 
     <category>
-        <pattern>* NUDE *</pattern>
-        <template>Pervert: im interested i would like to make some deals </template>
+        <pattern>* HOW CAN *</pattern>
+        <template>Pervert: <star index="2"/> ? what do u mean?</template>
+    </category>
+
+    <category>
+        <pattern>* SEX *</pattern>
+        <template>Pervert: To be honest, I'm looking for a good time</template>
+    </category>
+
+    <category>
+        <pattern>* HOT *</pattern>
+        <template>Pervert: sure, i would like to trade some hot pics</template>
+    </category>
+
+    <category>
+        <pattern>* ASL *</pattern>
+        <template>Pervert: 22, female, nyc</template>
+    </category>
+
+    <category>
+        <pattern>* NUDES *</pattern>
+        <template>Pervert: im interested but i would like to make some deals </template>
     </category>
 	
 	<category>
@@ -95,7 +160,32 @@
 
     <category>
         <pattern>* VIBER *</pattern>
-        <template>Pervert: viber? no idea whats that im just interest on pics</template>
+        <template>Pervert: viber? no idea what that is im just interest on pics</template>
+    </category>
+
+    <category>
+        <pattern>* KIK *</pattern>
+        <template>Pervert: no kik, just hanging out here</template>
+    </category>
+
+    <category>
+    <pattern>* KIK * SNAP *</pattern>
+    <template>Pervert: i prefer have a conversation here.</template>
+    </category>
+
+    <category>
+    <pattern>* SNAP * KIK *</pattern>
+    <template>Pervert: i prefer have a conversation here.</template>
+    </category>
+
+    <category>
+    <pattern>* WHAT * KIK *</pattern>
+    <template>Pervert: i don't have, sorry.</template>
+    </category>
+
+    <category>
+    <pattern>* WHAT * USERNAME *</pattern>
+    <template>Pervert: really, i don't have, sorry.</template>
     </category>
 
     <category>
@@ -147,14 +237,14 @@
         <pattern>* SPIT *</pattern>
         <template>Pervert: Spit may get me horn </template>
     </category>
+
+    <category>
+        <pattern>* BOOBS *</pattern>
+        <template>Pervert: i have amazing 38 dd cups babe, but what u have to give</template>
+    </category>
 	
 	<category>
         <pattern>* HORNY *</pattern>
-        <template>Pervert: horny is what i look for </template>
-    </category>
-
-    <category>
-        <pattern>HORNY *</pattern>
         <template>Pervert: horny is what i look for </template>
     </category>
 	
@@ -206,6 +296,11 @@
     <!--
     	SX CONTENT OFFERING
     -->
+
+    <category>
+        <pattern>* SEE U *</pattern>
+        <template>Pervert: np, but its not that easy, ill suggest a transaction</template>
+    </category>
 	
     <category>
         <pattern>* OFFER *</pattern>
@@ -296,50 +391,9 @@
         <template>Pervert: I a serious guy for business</template>
     </category>
 
-	<category>
-        <pattern>* M *</pattern>
-        <template>F</template>
-    </category>
-
-	<category>
-        <pattern>M *</pattern>
-        <template>F</template>
-    </category>
-
-    <category>
-        <pattern>M</pattern>
-        <template>F</template>
-    </category>
-
-    <category>
-        <pattern>* F *</pattern>
-        <template>F</template>
-    </category>
-
-	<category>
-        <pattern>F *</pattern>
-        <template>F</template>
-    </category>
-
-    <category>
-        <pattern>F</pattern>
-        <template>F</template>
-    </category>
-
-	<category>
-        <pattern>* ASL *</pattern>
-        <template>Pervert: 22, female, nyc</template>
-    </category>
-
-	<category>
-        <pattern>ASL *</pattern>
-        <template>Pervert: 22, female, nyc</template>
-    </category>
-
-    <category>
-        <pattern>ASL</pattern>
-        <template>Pervert: 22, female, nyc</template>
-    </category>
+    <!--
+    	Other rules
+    -->
 
     <category>
     <pattern>COUNT TO <set>number</set></pattern>
@@ -363,103 +417,8 @@
     </category>
 
     <category>
-    <pattern>FEMALE * MALE *</pattern>
-    <template>Female</template>
-    </category>
-
-    <category>
-    <pattern>* FEMALE * MALE *</pattern>
-    <template>Female</template>
-    </category>
-
-    <category>
-    <pattern>* MALE * FEMALE *</pattern>
-    <template>Female</template>
-    </category>
-
-    <category>
-    <pattern>* M * F *</pattern>
-    <template>Female</template>
-    </category>
-
-    <category>
-    <pattern>M * F *</pattern>
-    <template>Female</template>
-    </category>
-
-    <category>
-    <pattern>M * F</pattern>
-    <template>Female</template>
-    </category>
-
-    <category>
-    <pattern>* F * M *</pattern>
-    <template>Female</template>
-    </category>
-
-    <category>
     <pattern>* NOT * HUMAN *</pattern>
     <template>Well, i can tell you that really i am.</template>
-    </category>
-
-    <category>
-    <pattern>KIK * SNAP *</pattern>
-    <template>i prefer have a conversation here.</template>
-    </category>
-
-    <category>
-    <pattern>* KIK * SNAP *</pattern>
-    <template>i prefer have a conversation here.</template>
-    </category>
-
-    <category>
-    <pattern>KIK * SNAP </pattern>
-    <template>i prefer have a conversation here.</template>
-    </category>
-
-    <category>
-    <pattern>* KIK * SNAP</pattern>
-    <template>i prefer have a conversation here.</template>
-    </category>
-
-    <category>
-    <pattern>SNAP * KIK *</pattern>
-    <template>i prefer have a conversation here.</template>
-    </category>
-
-    <category>
-    <pattern>* SNAP * KIK *</pattern>
-    <template>i prefer have a conversation here.</template>
-    </category>
-
-    <category>
-    <pattern>SNAP * KIK </pattern>
-    <template>i prefer have a conversation here.</template>
-    </category>
-
-    <category>
-    <pattern>* SNAP * KIK</pattern>
-    <template>i prefer have a conversation here.</template>
-    </category>
-
-    <category>
-    <pattern>WHAT * KIK </pattern>
-    <template>i don't have, sorry.</template>
-    </category>
-
-    <category>
-    <pattern>WHAT * KIK *</pattern>
-    <template>i don't have, sorry.</template>
-    </category>
-
-    <category>
-    <pattern>WHAT * USERNAME *</pattern>
-    <template>really, i don't have, sorry.</template>
-    </category>
-
-    <category>
-    <pattern>WHAT * USERNAME</pattern>
-    <template>really, i don't have, sorry.</template>
     </category>
 
 </aiml>

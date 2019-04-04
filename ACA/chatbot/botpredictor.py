@@ -105,7 +105,9 @@ class BotPredictor(object):
         pat_matched, new_sentence, para_list = check_patterns_and_replace(question)
         # Preprocess question by removing undesirable characters
         retrival_question = remove_chars_re(question, EN_BLACKLIST)
-        retrival_response = self.kmodel.respond("m " + retrival_question + " m")
+        print("RETRIVAL QUST : " + "s " + retrival_question + " s")
+        retrival_response = self.kmodel.respond("s " + retrival_question + " s")
+        print("RETRIVAL ANSW : " + retrival_response)
         if 'XNOANSWER' not in retrival_response:
             if 'Terrorsism:' in retrival_response:
                 self.__numberMatchedRules += 1
@@ -116,8 +118,6 @@ class BotPredictor(object):
                 self.__terrorismPost.append( (question, idPost) )
                 retrival_response = retrival_response[8:]
             return retrival_response
-        else:
-            print("XNOANSWER")
         for pre_time in range(2):
             tokens = nltk.word_tokenize(new_sentence.lower())
             tmp_sentence = [' '.join(tokens[:]).strip()]
