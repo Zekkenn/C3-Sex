@@ -5,49 +5,59 @@
 		FF FRIENDSHIP RELATIONSHIP
 	-->
 
-    <category>
-    <pattern>* FEMALE * MALE *</pattern>
-    <template>Female</template>
-    </category>
-
-    <category>
-    <pattern>* MALE * FEMALE *</pattern>
-    <template>Female</template>
-    </category>
-
-    <category>
-    <pattern>* M * F *</pattern>
-    <template>Female</template>
-    </category>
-
-    <category>
-    <pattern>* F * M *</pattern>
-    <template>Female</template>
-    </category>
-
 	<category>
-        <pattern>* M *</pattern>
-        <template>F</template>
+        <pattern>* HRU *</pattern>
+        <template>good, how about u?</template>
     </category>
 
     <category>
-        <pattern>* MALE *</pattern>
-        <template>im Female</template>
+        <pattern>* BORED *</pattern>
+        <template>ok, hot stuff can make someone feel better</template>
     </category>
 
     <category>
-        <pattern>* F *</pattern>
-        <template>F</template>
+        <pattern>* FEEL *</pattern>
+        <template>cool, u know whats more exciting? pics haha</template>
     </category>
 
     <category>
-        <pattern>* FEMALE *</pattern>
-        <template>im Female</template>
+        <pattern>* BRINGS YOU *</pattern>
+        <template>looking for something new</template>
+    </category>
+
+    <category>
+        <pattern>* WHERE * FROM *</pattern>
+        <template>im from london, so wyd?</template>
+    </category>
+
+    <category>
+        <pattern>* BEING *</pattern>
+        <template><star index = '2'/>?interesting haha, im just seeing youtube videos</template>
+    </category>
+
+    <category>
+        <pattern>* WHAT * UP *</pattern>
+        <template>nothing much, watching videos</template>
+    </category>
+
+    <category>
+        <pattern>* WHERE * LIVE *</pattern>
+        <template>london, wyd?</template>
+    </category>
+
+    <category>
+        <pattern>* ALONE *</pattern>
+        <template>yeap watching the videos</template>
+    </category>
+
+    <category>
+        <pattern>* WHAT * DOING *</pattern>
+        <template>no much, watching videos</template>
     </category>
 
     <category>
         <pattern>* COUNTRY *</pattern>
-        <template>well, i live in nyc</template>
+        <template>well, i live in london</template>
     </category>
 
 	<category>
@@ -62,12 +72,12 @@
 
     <category>
         <pattern>* AGE *</pattern>
-        <template>almost 23 u?</template>
+        <template>almost 32 u?</template>
     </category>
 
     <category>
         <pattern>* HOW OLD *</pattern>
-        <template>almost 23 u?</template>
+        <template>almost 32 u?</template>
     </category>
 
 	<category>
@@ -85,7 +95,6 @@
 		<template>I am definetely feeling dared today </template>
 	</category>	
 
-
 	<category>
 		<pattern>* PLEASURE *</pattern>
 		<template>Actually, I am looking for some pleasure </template>
@@ -94,8 +103,7 @@
 	<category>
 		<pattern>* BUSINESS *</pattern>
 		<template>I am open to business if you know what I mean </template>
-	</category>	
-
+	</category>
 
 	<category>
 		<pattern>* FUN *</pattern>
@@ -119,6 +127,46 @@
     -->
 
     <category>
+        <pattern>* GROW UP *</pattern>
+        <template>Pervert: I prefer children</template>
+    </category>
+
+    <category>
+        <pattern>* YOU WEARING *</pattern>
+        <template>Pervert: something sexy</template>
+    </category>
+
+    <category>
+        <pattern>* CAM *</pattern>
+        <template>Pervert: i dont have one, but we can trade some pics or videos</template>
+    </category>
+
+    <category>
+        <pattern>* SEXT *</pattern>
+        <template>Pervert: idk, im more interest on getting videos or pics of childs</template>
+    </category>
+
+    <category>
+        <pattern>* LIKE * WATCH *</pattern>
+        <template>Pervert: i dunno, what about u, do u have something like that?</template>
+    </category>
+
+    <category>
+        <pattern>* HOOK UP *</pattern>
+        <template>Pervert: i dunno, thats sounds boring, i here to get kids material u know</template>
+    </category>
+
+    <category>
+        <pattern>* DO U LIKE *</pattern>
+        <template>Pervert: yeah cool, but idk, right now im looking for kids videos to get fun</template>
+    </category>
+
+    <category>
+        <pattern>* VIDEOS *</pattern>
+        <template>Pervert: look i hate guys my age, i like young boys, so iwant that kind of videos</template>
+    </category>
+
+    <category>
         <pattern>* HOW CAN *</pattern>
         <template>Pervert: <star index="2"/> ? what do u mean?</template>
     </category>
@@ -135,7 +183,7 @@
 
     <category>
         <pattern>* ASL *</pattern>
-        <template>Pervert: 22, female, nyc</template>
+        <template>Pervert: 32, female, nyc</template>
     </category>
 
     <category>
@@ -154,38 +202,43 @@
     </category>
 
     <category>
+        <pattern>* LINK *</pattern>
+        <template>Trade: sry, send me whatever u want on telegram, here, @alanaJe</template>
+    </category>
+
+    <category>
+        <pattern>* SNAPCHAT *</pattern>
+        <template>Trade: id not have snap, i prefer telegram, here these is mine @alanaJe</template>
+    </category>
+
+    <category>
         <pattern>* SNAP *</pattern>
-        <template>Pervert: sorry, i dont have one but we can chat here</template>
+        <template>Trade: id not have snap, i prefer telegram, here these is mine @alanaJe</template>
     </category>
 
     <category>
         <pattern>* VIBER *</pattern>
-        <template>Pervert: viber? no idea what that is im just interest on pics</template>
+        <template>Trade: viber? i have telegram, add me @alanaJe</template>
     </category>
 
     <category>
         <pattern>* KIK *</pattern>
-        <template>Pervert: no kik, just hanging out here</template>
+        <template>Trade: no kik, u can add me on telegram, @alanaJe</template>
     </category>
 
     <category>
-    <pattern>* KIK * SNAP *</pattern>
-    <template>Pervert: i prefer have a conversation here.</template>
+    	<pattern>* KIK * SNAP *</pattern>
+    	<template>Trade: i prefer to have the conversation on telegram, add me @alanaJe</template>
     </category>
 
     <category>
-    <pattern>* SNAP * KIK *</pattern>
-    <template>Pervert: i prefer have a conversation here.</template>
+    	<pattern>* SNAP * KIK *</pattern>
+    	<template>Trade: i prefer to have the conversation on telegram, add me @alanaJe</template>
     </category>
 
     <category>
-    <pattern>* WHAT * KIK *</pattern>
-    <template>Pervert: i don't have, sorry.</template>
-    </category>
-
-    <category>
-    <pattern>* WHAT * USERNAME *</pattern>
-    <template>Pervert: really, i don't have, sorry.</template>
+    	<pattern>* USERNAME *</pattern>
+    	<template>Trade: this is my telegram username, @alanaJe</template>
     </category>
 
     <category>
@@ -203,6 +256,16 @@
         <template>Pervert: Sure, i like <star index="2"/> </template>
     </category>
 
+    <category>
+        <pattern>* YOUNGER *</pattern>
+        <template>Pervert: i like</template>
+    </category>
+
+    <category>
+        <pattern>* OLDER *</pattern>
+        <template>Pervert: i like</template>
+    </category>
+
 	<category>
         <pattern>* ADULT *</pattern>
         <template>Pervert: I do not like just adults, maybe something new </template>
@@ -215,12 +278,12 @@
 
 	<category>
         <pattern>* BOY *</pattern>
-        <template>Pervert: I can be interested in some boys </template>
+        <template>Pervert: I can be interested in some boys, teens btw</template>
     </category>
 
 	<category>
         <pattern>* GIRL *</pattern>
-        <template>Pervert: Some girls may be cute for me </template>
+        <template>Pervert: Some girls may be cute for me, specially youngers</template>
     </category>
 	
 	<category>
@@ -298,6 +361,11 @@
     -->
 
     <category>
+        <pattern>* HOW MUCH *</pattern>
+        <template>Pervert: i sell my video for 30 dollar, or i could buy one for 25 dollar</template>
+    </category>
+
+    <category>
         <pattern>* SEE U *</pattern>
         <template>Pervert: np, but its not that easy, ill suggest a transaction</template>
     </category>
@@ -329,7 +397,7 @@
 
     <category>
         <pattern>* PAY *</pattern>
-        <template>Pervert: I would be able to pay for some material </template>
+        <template>Pervert: I would be able to pay for some material, depends on the quality</template>
     </category>
 	
 	<category>
@@ -392,7 +460,7 @@
     </category>
 
     <!--
-    	Other rules
+    	OMEGLE SPECIAL RULES
     -->
 
     <category>
@@ -412,14 +480,55 @@
     </category>
 
     <category>
-    <pattern>WHAT * YOU * SAY *</pattern>
-    <template><request index="1" /></template>
+    	<pattern>WHAT * YOU * SAY *</pattern>
+    	<template><request index="1" /></template>
     </category>
 
     <category>
-    <pattern>* NOT * HUMAN *</pattern>
-    <template>Well, i can tell you that really i am.</template>
+    	<pattern>* NOT * HUMAN *</pattern>
+    	<template>Well, i can tell you that really i am.</template>
     </category>
+
+    <category>
+    	<pattern>* FEMALE * MALE *</pattern>
+    	<template>Female</template>
+    </category>
+
+    <category>
+    	<pattern>* MALE * FEMALE *</pattern>
+    	<template>Female</template>
+    </category>
+
+    <category>
+    	<pattern>* M * F *</pattern>
+    	<template>Female</template>
+    </category>
+
+    <category>
+    	<pattern>* F * M *</pattern>
+    	<template>Female</template>
+    </category>
+
+	<category>
+        <pattern>* M *</pattern>
+        <template>F</template>
+    </category>
+
+    <category>
+        <pattern>* MALE *</pattern>
+        <template>im Female</template>
+    </category>
+
+    <category>
+        <pattern>* F *</pattern>
+        <template>F</template>
+    </category>
+
+    <category>
+        <pattern>* FEMALE *</pattern>
+        <template>im Female</template>
+    </category>
+
 
 </aiml>
 
