@@ -306,23 +306,13 @@
         <template>F</template>
     </category>
 
-	<category>
-        <pattern>M *</pattern>
-        <template>F</template>
-    </category>
-
     <category>
         <pattern>M</pattern>
         <template>F</template>
     </category>
 
-    <category>
-        <pattern>* F *</pattern>
-        <template>F</template>
-    </category>
-
 	<category>
-        <pattern>F *</pattern>
+        <pattern>* F *</pattern>
         <template>F</template>
     </category>
 
@@ -483,7 +473,7 @@
     </category>
 
     <category>
-        <pattern>AGE</pattern>
+        <pattern>* AGE *</pattern>
         <template>23</template>
     </category>
 
@@ -555,6 +545,16 @@
     <category>
         <pattern>* COCK *</pattern>
         <template>Mmmm it could be... :o</template>
+    </category>
+
+    <category>
+        <pattern>* ARE * LADY *</pattern>
+        <template>Well, that's right, i suppose you a gentelman</template>
+    </category>
+
+    <category>
+        <pattern>* WHAT * AGE *</pattern>
+        <template>23, but it doesn't matter... </template>
     </category>
 
 </aiml>

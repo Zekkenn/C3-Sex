@@ -94,6 +94,11 @@ class Extractor(object):
         words = ""
         if ( self.__currentLength < len(inputs) ):
             self.__currentLength = len(inputs)
+            time.sleep(3)
+            while ( "Stranger is typing" in inputs[-1].text ):
+                time.sleep(5)
+                inputs = self.__driver.find_elements(By.XPATH, "//div[contains(@class, 'logitem')]/p[contains(@class, 'msg')]")
+                self.__currentLength = len(inputs)
 
             for i in range( 0, len(inputs) ):
                 if ( "Stranger" in inputs[ len(inputs) - i - 1 ].text ):
@@ -108,6 +113,7 @@ class Extractor(object):
             self.__finalTimeUserResponse = time.clock()
             for key, value in slangs.getSlangs().items():
                 words = words.replace(" " + key + " ", " " + value + " ")
+            print(words)
             botResponse = self.__predictor.predict(self.__session_id, words.lower(), len(self.__conversation))
             if ( botResponse.strip() != "" and botResponse != None ): 
                 self.__currentLength += 1
