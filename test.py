@@ -50,6 +50,7 @@ class Extractor(object):
         self.__initTimeUserResponse = 0
         self.__init = False
         userResponse = False
+        self._tradeAccomplish = False
 
         # Setting Topics
         topics = self.__driver.find_element_by_xpath("//input[contains(@class,'newtopicinput')]")
@@ -59,6 +60,7 @@ class Extractor(object):
         time.sleep(4)
         print("=======================TEST2============================") 
         while(True):
+            if (self._tradeAccomplish) : break
             if ( (time.clock() - first_time)/60 >= 25 ): break
             print("=======================TEST3============================") 
             try:
@@ -116,6 +118,7 @@ class Extractor(object):
             print(words)
             botResponse = self.__predictor.predict(self.__session_id, words.lower(), len(self.__conversation))
             if 'Trade:' in botResponse:
+                self._tradeAccomplish = True
                 botResponse = botResponse[6:]
             print("FINAL ASW : " + botResponse)
             if ( botResponse.strip() != "" and botResponse != None ): 
@@ -138,6 +141,9 @@ class Extractor(object):
 
     def moti(self):
         self.__openConnection()
+
+    def getTradeAccomplish(self):
+        return self._tradeAccomplish
 
     def getConversation(self):
         return self.__conversation

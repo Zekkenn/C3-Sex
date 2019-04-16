@@ -1,4 +1,5 @@
-from test import Extractor
+from test import Extractor as omegleExtractor
+from telegram import Extractor as telegramExtractor
 from settings import PROJECT_ROOT
 from threading import Thread
 
@@ -53,7 +54,7 @@ def firstImplementation():
     bots = list()
     threads = list()
     for i in range(0,BOTS_N):
-        a = Extractor()
+        a = omegleExtractor()
         bots.append(a)
         thread = Thread(target = startBot, args = (a, ))
         threads.append( thread )
@@ -69,11 +70,18 @@ def firstImplementation():
     #saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, repFiles )
 
 if __name__ == '__main__':
-    a = Extractor()
+    omegle = omegleExtractor()
+    telegram = telegramExtractor()
+    telegram.moti()
     while (True):
-        a.moti()
-        repFiles = saveReplies([a])
+        omegle.moti()
+        # TELEGRAM NOTIFICATION
+        # omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
+        # End of telegram conversation
+        # Get telegram user replies
+        repFiles = saveReplies([omegle,telegram]) # Save omegle and telegram replies
         emotionsAndSentiments = analyze(repFiles)
-        timeMetric, rulesMetric = analytics.getMetrics( [a] )
+        timeMetric, rulesMetric = analytics.getMetrics( [omegle,telegram] )
         saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
-        a.reset()
+        # OMEGLE NOTIFICATION
+        omegle.reset()
