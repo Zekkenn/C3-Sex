@@ -77,10 +77,17 @@ class Extractor(object):
                 print("lol_response")
         
         while (True):
-            time.sleep(10)
+            time.sleep(5)
             for i in inputs:
                 element = i.find_element_by_xpath("//span[contains(@class,'im_dialog_badge badge')]")
-                name = i.find_element_by_xpath("//span[contains(@my-peer-link,'dialogMessage.peerID')]")
+                name = i.find_element_by_xpath("//div[contains(@class,'im_dialog_peer')]")
+                print("=================HTML=========================")
+                print(i.get_attribute('innerHTML'))
+                print("==============================0")
+                print(i.text)
+                print("==================000")
+                print(name.get_attribute('innerHTML'))
+                print("==================000")
                 if ( str.isdigit(element.text) ): 
                     print("==================LOL=======================")
                     i.find_element_by_xpath("//div[contains(@class,'im_dialog_message_wrap')]").click()
@@ -90,8 +97,8 @@ class Extractor(object):
                     while(True):
                         try:
                             time.sleep(3)
-                            self.responseCurrentWindow(  )
-                            break
+                            end = self.responseCurrentWindow(  )
+                            if( end): break
                         except:
                             print("=======================TEST1============================")
                         time.sleep(2)
@@ -100,14 +107,16 @@ class Extractor(object):
 
     def responseCurrentWindow(self):
         firstInputs = self.__driver.find_elements(By.XPATH, "//div[contains(@class, 'im_history_message_wrap')]")
-        inputs = []; words = ""
+        words = ""
         for i in range(len(firstInputs)):
             words = words+ " " +firstInputs[-1-i].find_element_by_xpath("//div[contains(@class,'im_message_text')]").text.strip()
             if ( firstInputs[-1-i].get_attribute("class") == "im_history_message_wrap" ):
+                if ( "Zek" in firstInputs[-1-i].text ):
+                    words = ""
                 break
-        if ( self.__currentLength < len(inputs) ):
+        if ( self.__currentLength < len(firstInputs) ):
             print("==========================ENTRA LOL===================================")
-            self.__currentLength = len(inputs)
+            self.__currentLength = len(firstInputs)
             time.sleep(3)
             while ( True ):
                 try:
@@ -120,8 +129,10 @@ class Extractor(object):
                         print("============TEXT============")
                         print(words)
                         if ( firstInputs[-1-i].get_attribute("class") == "im_history_message_wrap" ):
+                            if ( "Zek" in firstInputs[-1-i].text ):
+                                words = ""
                             break
-                    self.__currentLength = len(inputs)
+                    self.__currentLength = len(firstInputs)
                     break
                 time.sleep(5)
 
@@ -154,6 +165,7 @@ class Extractor(object):
                 self.__driver.find_element_by_xpath("//button[contains(@class, 'btn btn-md im_submit im_submit_send')]").click()
         else:
             print("========LOL============")
+        return False
 
     def __login(self):
         indicative = self.__driver.find_element_by_xpath("//input[contains(@name,'phone_number')]")
