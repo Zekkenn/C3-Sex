@@ -76,12 +76,15 @@ if __name__ == '__main__':
     while (True):
         omegle.moti()
         # TELEGRAM NOTIFICATION
-        # omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
-        # End of telegram conversation
-        # Get telegram user replies
-        repFiles = saveReplies([omegle,telegram]) # Save omegle and telegram replies
-        emotionsAndSentiments = analyze(repFiles)
-        timeMetric, rulesMetric = analytics.getMetrics( [omegle,telegram] )
-        saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
+        tradeTelegram = omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
+        if ( tradeTelegram ):                
+            # End of telegram conversation
+            # Get telegram user replies
+            telegram.tradeAccomplish()
+        else:
+            repFiles = saveReplies([omegle,telegram]) # Save omegle and telegram replies
+            emotionsAndSentiments = analyze(repFiles)
+            timeMetric, rulesMetric = analytics.getMetrics( [omegle,telegram] )
+            saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
         # OMEGLE NOTIFICATION
         omegle.reset()

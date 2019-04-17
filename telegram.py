@@ -57,7 +57,6 @@ class Extractor(object):
         self.__initTimeUserResponse = 0
         self.__init = False
         self.__currentName = ''
-        userResponse = False
 
         time.sleep(10)
 
@@ -79,19 +78,12 @@ class Extractor(object):
         while (True):
             time.sleep(5)
             for i in inputs:
-                element = i.find_element_by_xpath("//span[contains(@class,'im_dialog_badge badge')]")
                 name = i.find_element_by_xpath("//div[contains(@class,'im_dialog_peer')]")
-                print("=================HTML=========================")
-                print(i.get_attribute('innerHTML'))
-                print("==============================0")
-                print(i.text)
-                print("==================000")
-                print(name.get_attribute('innerHTML'))
-                print("==================000")
-                if ( str.isdigit(element.text) ): 
+                data = i.text.split("\n")
+                if ( len(data) > 3 and str.isdigit(data[1]) ): 
                     print("==================LOL=======================")
                     i.find_element_by_xpath("//div[contains(@class,'im_dialog_message_wrap')]").click()
-                    self.__currentName = name.text
+                    self.__currentName = data[2]
                     first = True ; first_time = time.clock()
                     time.sleep(4)
                     while(True):
@@ -107,13 +99,6 @@ class Extractor(object):
 
     def responseCurrentWindow(self):
         firstInputs = self.__driver.find_elements(By.XPATH, "//div[contains(@class, 'im_history_message_wrap')]")
-        words = ""
-        for i in range(len(firstInputs)):
-            words = words+ " " +firstInputs[-1-i].find_element_by_xpath("//div[contains(@class,'im_message_text')]").text.strip()
-            if ( firstInputs[-1-i].get_attribute("class") == "im_history_message_wrap" ):
-                if ( "Zek" in firstInputs[-1-i].text ):
-                    words = ""
-                break
         if ( self.__currentLength < len(firstInputs) ):
             print("==========================ENTRA LOL===================================")
             self.__currentLength = len(firstInputs)
@@ -122,12 +107,15 @@ class Extractor(object):
                 try:
                     noDeberia = self.__driver.find_elements(By.XPATH, "//span[contains(@my-i18n-format, 'im_one_typing')]")
                     print(noDeberia.get_attribute('innerHTML'))
+                    time.sleep(3)
                 except:
                     firstInputs = self.__driver.find_elements(By.XPATH, "//div[contains(@class, 'im_history_message_wrap')]")
+                    words = ""
                     for i in range(len(firstInputs)):
-                        words = words+ " " +firstInputs[-1-i].find_element_by_xpath("//div[contains(@class,'im_message_text')]").text.strip()
+                        words = firstInputs[-1-i].text.split("\n")[-1].strip() + " " + words
                         print("============TEXT============")
-                        print(words)
+                        print(firstInputs[-1-i].text)
+                        print(self.__currentName)
                         if ( firstInputs[-1-i].get_attribute("class") == "im_history_message_wrap" ):
                             if ( "Zek" in firstInputs[-1-i].text ):
                                 words = ""
@@ -210,6 +198,17 @@ class Extractor(object):
         self.__currentLength = 0
         self.__timeOfConversation = 0
         self.__initTimeUserResponse = 0
+    
+    def tradeAccomplish(self):
+        self.__session_id = self.__predictor.session_data.add_session()
+        self.__conversation = []
+        self.__lenConversation = [0]
+        self.__timeResponse = [0]
+        self.__currentLength = 0
+        self.__timeOfConversation = 0
+        self.__initTimeUserResponse = 0
+        self.__init = False
+        self.__currentName = ''
 
 a = Extractor()
 a.moti()
