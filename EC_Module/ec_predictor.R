@@ -71,19 +71,20 @@ generateDict <- function(model.trainingdata){
 
 # ============================ MORIARTY : USING EC MODULE ==================================
 
-modelEC <- readRDS("EC_Module/models/modelSVM_isear_fin.rds")
+modelEC <- readRDS("EC_Module/models/modelSVM_fin.rds")
 #generateDict(modelEC$trainingData)
 
 # READ REPLIES
 replies.file <- commandArgs(trailingOnly = TRUE)
 replies <- scan(replies.file, what = character(), sep = '\n')
-
-test <- data.frame(SIT = replies, stringsAsFactors = FALSE)
-
-test.rep <- bag.of.words(preproccess.data(test))
-
-predEC <- predict(modelEC, test.rep)
-
-# SAVE PREDICTIONS
 filename <- gsub(".txt","_EC.txt",replies.file)
-writeLines(as.character(paste(replies,predEC,sep=",")), con=filename)
+if (length(replies) != 0) {
+  test <- data.frame(SIT = replies, stringsAsFactors = FALSE)
+  test.rep <- bag.of.words(preproccess.data(test))
+  predEC <- predict(modelEC, test.rep)
+  # SAVE PREDICTIONS
+  writeLines(as.character(paste(replies,predEC,sep=",")), con=filename)
+}else{
+  writeLines(as.character(replies), con=filename)
+}
+

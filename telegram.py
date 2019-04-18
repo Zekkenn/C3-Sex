@@ -58,6 +58,8 @@ class Extractor(object):
         self.__init = False
         self.__currentName = ''
         self.__currentUserWebElement = ''
+        self.__condition = ''
+        self.__timeOut = time.perf_counter()
 
         time.sleep(10)
 
@@ -78,8 +80,8 @@ class Extractor(object):
         
         while (True):
             time.sleep(5)
+            if ( time.perf_counter() - self.__timeOut > 5*60 ): break
             for i in inputs:
-                name = i.find_element_by_xpath("//div[contains(@class,'im_dialog_peer')]")
                 data = i.text.split("\n")
                 if ( len(data) > 3 and str.isdigit(data[1]) ): 
                     print("==================LOL=======================")
@@ -160,7 +162,6 @@ class Extractor(object):
         return False
 
     def __login(self):
-        indicative = self.__driver.find_element_by_xpath("//input[contains(@name,'phone_number')]")
         number = self.__driver.find_element_by_xpath("//input[contains(@name,'phone_number')]")
         number.send_keys("3214894348")
         self.__driver.find_element_by_xpath("//a[contains(@class,'login_head_submit_btn')]").click()
@@ -203,7 +204,7 @@ class Extractor(object):
         self.__timeOfConversation = 0
         self.__initTimeUserResponse = 0
     
-    def tradeAccomplish(self):
+    def tradeAccomplish(self, condition):
         self.__conversation = []
         self.__lenConversation = [0]
         self.__timeResponse = [0]
@@ -212,6 +213,8 @@ class Extractor(object):
         self.__initTimeUserResponse = 0
         self.__init = False
         self.__currentName = ''
+        self.__condition = condition
+        self.__timeOut = time.perf_counter()
 
     def blockUser(self):
         self.__driver.find_element_by_xpath("//a[contains(@class,'pull-right im_panel_peer_photo peer_photo_init')]").click()
