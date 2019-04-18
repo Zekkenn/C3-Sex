@@ -57,6 +57,7 @@ class Extractor(object):
         self.__initTimeUserResponse = 0
         self.__init = False
         self.__currentName = ''
+        self.__currentUserWebElement = ''
 
         time.sleep(10)
 
@@ -82,6 +83,7 @@ class Extractor(object):
                 data = i.text.split("\n")
                 if ( len(data) > 3 and str.isdigit(data[1]) ): 
                     print("==================LOL=======================")
+                    self.__timeOfConversation = time.clock()
                     i.find_element_by_xpath("//div[contains(@class,'im_dialog_message_wrap')]").click()
                     self.__currentName = data[2]
                     first = True ; first_time = time.clock()
@@ -92,7 +94,7 @@ class Extractor(object):
                             end = self.responseCurrentWindow(  )
                             if( end): break
                         except:
-                            print("=======================TEST1============================")
+                            print("=======================TEST1==========================")
                         time.sleep(2)
                     break
                     #self.__driver.quit()
@@ -128,7 +130,7 @@ class Extractor(object):
 
         if ( words != "" ):
             # Bot Response
-            self.__finalTimeUserResponse = time.clock()
+            self.__finalTimeUserResponse = time.perf_counter()
             for key, value in slangs.getSlangs().items():
                 words = words.replace(" " + key + " ", " " + value + " ")
             print("=======================WORDS==========================")
@@ -153,6 +155,8 @@ class Extractor(object):
                 self.__driver.find_element_by_xpath("//button[contains(@class, 'btn btn-md im_submit im_submit_send')]").click()
         else:
             print("========LOL============")
+        if ( time.perf_counter() - self.__timeOfConversation > 5*60):
+            return True
         return False
 
     def __login(self):
@@ -200,7 +204,6 @@ class Extractor(object):
         self.__initTimeUserResponse = 0
     
     def tradeAccomplish(self):
-        self.__session_id = self.__predictor.session_data.add_session()
         self.__conversation = []
         self.__lenConversation = [0]
         self.__timeResponse = [0]
@@ -209,6 +212,11 @@ class Extractor(object):
         self.__initTimeUserResponse = 0
         self.__init = False
         self.__currentName = ''
+
+    def blockUser(self):
+        self.__driver.find_element_by_xpath("//a[contains(@class,'pull-right im_panel_peer_photo peer_photo_init')]").click()
+        time.sleep(3)
+        self.__driver.find_element_by_xpath("//a[contains(@class,'md_modal_section_link')]").click()
 
 a = Extractor()
 a.moti()

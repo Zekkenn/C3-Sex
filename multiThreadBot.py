@@ -74,9 +74,9 @@ if __name__ == '__main__':
     telegram = telegramExtractor()
     telegram.moti()
     while (True):
-        omegle.moti()
+        tradeTelegram = omegle.moti()
         # TELEGRAM NOTIFICATION
-        tradeTelegram = omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
+        # omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
         if ( tradeTelegram ):                
             # End of telegram conversation
             # Get telegram user replies
