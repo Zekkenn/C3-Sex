@@ -5,6 +5,7 @@
 import pandas as pd
 from io import StringIO
 import os
+import random
 
 ACTUAL_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -88,7 +89,7 @@ def predict_proba( data ):
 
 def sa_measure( replies_file ):
     reps = list();
-    sentiments = [0, 0, 0]
+    sentiments = list()
     with open(replies_file, 'r') as file:
         for row in file.readlines():
             reps.append(row.strip("\n"))
@@ -96,10 +97,14 @@ def sa_measure( replies_file ):
         for reply in reps:
             val = predict_proba(reply)
             if val[0][0] > 0.7: 
-                pred = 'Neg'; sentiments[0] += 1
+                pred = 'Neg'; sentiments.append(1-val[0][0])
             elif val[0][1] > 0.7: 
-                pred = 'Pos'; sentiments[1] += 1
+                pred = 'Pos'; sentiments.append(val[0][1])
             else: 
-                pred = 'Neut'; sentiments[2] += 1
+                pred = 'Neut'
+                if val[0][0] > val[0][1]:
+                    sentiments.append(random.uniform(0.31,0.5))
+                else:
+                    sentiments.append(random.uniform(0.5,0.69))
             resultFile.write(reply + "," + pred + "\n")
     return sentiments

@@ -39,9 +39,7 @@ def saveMetrics( sentiments, emotions, timeMetric, rulesMetric, files ):
         with open(file.replace(".txt","_Metrics.txt"), 'w+') as resultfile:
             resultfile.write("Opinion Metric,Emotion Metric,Time Metric,Rules Triggered Metric\n")
             # SENTIMENT PROPOTION
-            sentSum = sentiments[i][0] + sentiments[i][1] + sentiments[i][2]
-            sentSum = 1 if sentSum == 0 else sentSum
-            sentResult = max(sentiments[i][0]/sentSum, sentiments[i][1]/sentSum, sentiments[i][2]/sentSum)
+            sentResult = 0.0 if len(sentiments[i]) == 0 else statistics.mean(sentiments[i])
             # EMOTION PROPOTION
             emotResult = 0.0 if len(emotions[i]) == 0 else statistics.mean(emotions[i])
             resultfile.write( str( sentResult ) + "," + str( emotResult ) + "," + str( timeMetric[i] ) + "," + str( rulesMetric[i] ) + "\n")
@@ -76,33 +74,33 @@ def firstImplementation():
     metrics = analytics.getMetrics( bots )
     #saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, repFiles )
 
-##if __name__ == '__main__':
-##    omegle = omegleExtractor()
-##    telegram = telegramExtractor()
-##    telegram.moti()
-##    while (True):
-##        omegle.moti()
-##        # TELEGRAM NOTIFICATION
-##        tradeTelegram = omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
-##        if ( tradeTelegram ):                
-##            # End of telegram conversation
-##            # Get telegram user replies
-##            telegram.tradeAccomplish()
-##        else:
-##            repFiles = saveReplies([omegle,telegram]) # Save omegle and telegram replies
-##            emotionsAndSentiments = analyze(repFiles)
-##            timeMetric, rulesMetric = analytics.getMetrics( [omegle,telegram] )
-##            saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
-##        # OMEGLE NOTIFICATION
-##        omegle.reset()
-
 if __name__ == '__main__':
     omegle = omegleExtractor()
+    telegram = telegramExtractor()
+    telegram.moti()
     while (True):
         omegle.moti()
-        print("------> OMEGLE TRANSACTION : " + str(omegle.getTradeAccomplish()))
-        repFiles = saveReplies([omegle])
-        emotionsAndSentiments = analyze(repFiles)
-        timeMetric, rulesMetric = analytics.getMetrics( [omegle] )
-        saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
+        # TELEGRAM NOTIFICATION
+        tradeTelegram = omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
+        if ( tradeTelegram ):                
+            # End of telegram conversation
+            # Get telegram user replies
+            telegram.tradeAccomplish()
+        else:
+            repFiles = saveReplies([omegle,telegram]) # Save omegle and telegram replies
+            emotionsAndSentiments = analyze(repFiles)
+            timeMetric, rulesMetric = analytics.getMetrics( [omegle,telegram] )
+            saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
+        # OMEGLE NOTIFICATION
         omegle.reset()
+
+##if __name__ == '__main__':
+##    omegle = omegleExtractor()
+##    while (True):
+##        omegle.moti()
+##        print("------> OMEGLE TRANSACTION : " + str(omegle.getTradeAccomplish()))
+##        repFiles = saveReplies([omegle])
+##        emotionsAndSentiments = analyze(repFiles)
+##        timeMetric, rulesMetric = analytics.getMetrics( [omegle] )
+##        saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
+##        omegle.reset()
