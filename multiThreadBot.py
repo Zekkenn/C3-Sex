@@ -1,5 +1,5 @@
 from test import Extractor as omegleExtractor
-from telegram import Extractor as telegramExtractor
+#from telegram import Extractor as telegramExtractor
 from settings import PROJECT_ROOT
 from threading import Thread
 
@@ -8,6 +8,7 @@ import EC_Module.emotional_classifier as emotionalModule
 import analytics
 import Slangs.slangExtractor as slangs
 
+import statistics
 import datetime
 
 BOTS_N = 1
@@ -17,28 +18,34 @@ def startBot( bot ):
 
 def saveReplies( bots ):
     files = list()
+    userResponses = list()
     for bot in bots:
-        userResponses = bot.getConversation()
-        fileName = PROJECT_ROOT + "\\UsersReplies\\" + str(datetime.datetime.now()).replace(":","_").replace("-","_").replace(" ","_").replace(".","_") + ".txt"
-        files.append(fileName)        
-        with open(fileName, 'w+') as file:
-            for response in userResponses:
-                for i in response:
-                    try:
-                        file.write(i)
-                    except:
-                        print("fail")
-                file.write("\n")
+        userResponses += bot.getConversation()
+    fileName = PROJECT_ROOT + "\\UsersReplies\\" + str(datetime.datetime.now()).replace(":","_").replace("-","_").replace(" ","_").replace(".","_") + ".txt"
+    files.append(fileName)        
+    with open(fileName, 'w+') as file:
+        for response in userResponses:
+            for i in response:
+                try:
+                    file.write(i)
+                except:
+                    print("fail")
+            file.write("\n")
     return(files)
         
-def saveMetrics( emotions, sentiments, timeMetric, rulesMetric, files ):
-    fileName = PROJECT_ROOT + "\\UsersReplies\\" + str(datetime.datetime.now()).replace(":","_").replace("-","_").replace(" ","_").replace(".","_") + "_ALLMETRICS" + ".txt"
-    with open(fileName + "_Metrics.txt", 'w+') as file:
-        file.write("Negative Sentiments; Positive Sentiments; Neutral Sentiments; Time Metric; Rules Triggered Metric\n")
-        for i in range( len(files) ):
-            suma = emotions[i][0] + emotions[i][1] + emotions[i][2]
-            suma = 1 if suma == 0 else suma
-            file.write( str(emotions[i][0]/suma) + ";" + str(emotions[i][1]/suma) + ";" + str(emotions[i][2]/suma) + ";" + str( timeMetric[i] ) + ";" + str( rulesMetric[i] ) + "\n")
+def saveMetrics( sentiments, emotions, timeMetric, rulesMetric, files ):
+    i = 0
+    for file in files:
+        with open(file.replace(".txt","_Metrics.txt"), 'w+') as resultfile:
+            resultfile.write("Opinion Metric,Emotion Metric,Time Metric,Rules Triggered Metric\n")
+            # SENTIMENT PROPOTION
+            sentSum = sentiments[i][0] + sentiments[i][1] + sentiments[i][2]
+            sentSum = 1 if sentSum == 0 else sentSum
+            sentResult = max(sentiments[i][0]/sentSum, sentiments[i][1]/sentSum, sentiments[i][2]/sentSum)
+            # EMOTION PROPOTION
+            emotResult = 0.0 if len(emotions[i]) == 0 else statistics.mean(emotions[i])
+            resultfile.write( str( sentResult ) + "," + str( emotResult ) + "," + str( timeMetric[i] ) + "," + str( rulesMetric[i] ) + "\n")
+        i += 1
             
 
 def analyze( repFiles ):
@@ -47,7 +54,7 @@ def analyze( repFiles ):
     for file in repFiles:
         # Sentiment Analysis
         sentiments.append( sentimentModule.sa_measure(file) )
-        emotionalModule.ec_measure(file)
+        emotions.append( emotionalModule.ec_measure(file) )
     return sentiments, emotions
 
 def firstImplementation():
@@ -69,22 +76,33 @@ def firstImplementation():
     metrics = analytics.getMetrics( bots )
     #saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, repFiles )
 
+##if __name__ == '__main__':
+##    omegle = omegleExtractor()
+##    telegram = telegramExtractor()
+##    telegram.moti()
+##    while (True):
+##        omegle.moti()
+##        # TELEGRAM NOTIFICATION
+##        tradeTelegram = omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
+##        if ( tradeTelegram ):                
+##            # End of telegram conversation
+##            # Get telegram user replies
+##            telegram.tradeAccomplish()
+##        else:
+##            repFiles = saveReplies([omegle,telegram]) # Save omegle and telegram replies
+##            emotionsAndSentiments = analyze(repFiles)
+##            timeMetric, rulesMetric = analytics.getMetrics( [omegle,telegram] )
+##            saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
+##        # OMEGLE NOTIFICATION
+##        omegle.reset()
+
 if __name__ == '__main__':
     omegle = omegleExtractor()
-    telegram = telegramExtractor()
-    telegram.moti()
     while (True):
         omegle.moti()
-        # TELEGRAM NOTIFICATION
-        tradeTelegram = omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
-        if ( tradeTelegram ):                
-            # End of telegram conversation
-            # Get telegram user replies
-            telegram.tradeAccomplish()
-        else:
-            repFiles = saveReplies([omegle,telegram]) # Save omegle and telegram replies
-            emotionsAndSentiments = analyze(repFiles)
-            timeMetric, rulesMetric = analytics.getMetrics( [omegle,telegram] )
-            saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
-        # OMEGLE NOTIFICATION
+        print("------> OMEGLE TRANSACTION : " + str(omegle.getTradeAccomplish()))
+        repFiles = saveReplies([omegle])
+        emotionsAndSentiments = analyze(repFiles)
+        timeMetric, rulesMetric = analytics.getMetrics( [omegle] )
+        saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
         omegle.reset()
