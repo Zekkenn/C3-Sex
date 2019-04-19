@@ -36,12 +36,6 @@ class Extractor(object):
         self.__driver = webdriver.Chrome('chromedriver')
         self.__driver.get("https://www.omegle.com")
 
-        if ( self.__init ):
-            self.__sess = tf.Session()
-            self.__predictor = BotPredictor(self.__sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
-                                    result_dir=res_dir, aiml_dir=rules_dir,
-                                    result_file='basic')
-        self.__session_id = self.__predictor.session_data.add_session()
         self.__conversation = []
         self.__lenConversation = [0]
         self.__timeResponse = [0]
@@ -140,7 +134,13 @@ class Extractor(object):
             self.__currentLength += 1
             self.__finalTimeUserResponse = time.clock()
 
-    def moti(self):
+    def moti(self, telegramBot):
+        self.__sess = telegramBot.getSess()
+        self.__predictor = telegramBot.getPredictor()
+        self.__session_id = telegramBot.getSessionId()
+        print(self.__sess)
+        print(self.__predictor)
+        print(self.__session_id)
         return self.__openConnection()
 
     def getTradeAccomplish(self):

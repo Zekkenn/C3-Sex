@@ -21,18 +21,25 @@ class Extractor(object):
 
     def __init__(self):
 
-        self.__init = True
-        
 
-    def __openConnection(self):
-        """__openConnection()
-
-        """
         # Start Chatbot Session
         corp_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Corpus')
         knbs_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Variety')
         res_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Result')
         rules_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Rules')
+
+        self.__init = True
+        self.__sess = tf.Session()
+        self.__predictor = BotPredictor(self.__sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
+                                    result_dir=res_dir, aiml_dir=rules_dir,
+                                    result_file='basic')
+        self.__session_id = self.__predictor.session_data.add_session()
+
+    def __openConnection(self):
+        """__openConnection()
+
+        """
+        
 
         chrome_options = Options()
         chrome_options.add_argument("--user-data-dir=C:/Users/sebastian.moreno-r/AppData/Local/Google/Chrome/User Data") # change to profile path
@@ -43,12 +50,6 @@ class Extractor(object):
         self.__driver = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
         self.__driver.get("https://web.telegram.org/#/im")
         
-        if ( self.__init ):
-            self.__sess = tf.Session()
-            self.__predictor = BotPredictor(self.__sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
-                                    result_dir=res_dir, aiml_dir=rules_dir,
-                                    result_file='basic')
-        self.__session_id = self.__predictor.session_data.add_session()
         self.__conversation = []
         self.__lenConversation = [0]
         self.__timeResponse = [0]
@@ -158,6 +159,7 @@ class Extractor(object):
         else:
             print("========LOL============")
         if ( time.perf_counter() - self.__timeOfConversation > 5*60):
+            self.__condition.notify()
             return True
         return False
 
@@ -177,6 +179,15 @@ class Extractor(object):
     
     def moti(self):
         self.__openConnection()
+    
+    def getSess(self):
+        return self.__sess
+
+    def getSessionId(self):
+        return self.__session_id
+
+    def getPredictor(self):
+        return self.__predictor
 
     def getConversation(self):
         return self.__conversation
@@ -220,6 +231,3 @@ class Extractor(object):
         self.__driver.find_element_by_xpath("//a[contains(@class,'pull-right im_panel_peer_photo peer_photo_init')]").click()
         time.sleep(3)
         self.__driver.find_element_by_xpath("//a[contains(@class,'md_modal_section_link')]").click()
-
-a = Extractor()
-a.moti()

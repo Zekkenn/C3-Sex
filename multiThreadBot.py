@@ -79,9 +79,10 @@ if __name__ == '__main__':
     omegle = omegleExtractor()
     telegram = telegramExtractor()
     threadTelegram = Thread(target = startBot, args = (telegram, ))
+    threadTelegram.start()
     condition = threading.Condition()
     while (True):
-        tradeTelegram = omegle.moti()
+        tradeTelegram = omegle.moti(telegram) 
         # TELEGRAM NOTIFICATION
         # omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
         if ( tradeTelegram ):                
