@@ -72,12 +72,17 @@
 
     <category>
         <pattern>* AGE *</pattern>
-        <template>almost 32 u?</template>
+        <template>almost 28 u?</template>
+    </category>
+
+    <category>
+        <pattern>* AGE * FUCK *</pattern>
+        <template>idk, but im looking for something more interesting, like porn...</template>
     </category>
 
     <category>
         <pattern>* HOW OLD *</pattern>
-        <template>almost 32 u?</template>
+        <template>almost 28 u?</template>
     </category>
 
 	<category>
@@ -183,7 +188,7 @@
 
     <category>
         <pattern>* ASL *</pattern>
-        <template>Pervert: 32, female, nyc</template>
+        <template>Pervert: 28, female, nyc</template>
     </category>
 
     <category>

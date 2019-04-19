@@ -52,7 +52,10 @@ def analyze( repFiles ):
     emotions = []
     for file in repFiles:
         # Sentiment Analysis
-        sentiments.append( sentimentModule.sa_measure(file) )
+        try:
+            sentiments.append( sentimentModule.sa_measure(file) )
+        except:
+            sentiments.append( [] ) 
         emotions.append( emotionalModule.ec_measure(file) )
     return sentiments, emotions
 
@@ -88,8 +91,11 @@ if __name__ == '__main__':
         if ( tradeTelegram ):                
             # End of telegram conversation
             # Get telegram user replies
+            condition.acquire()
             telegram.tradeAccomplish( condition )
+            print("========LOLWAIT==============")
             condition.wait()
+            print("========LOL==============")
 
         else:
             repFiles = saveReplies([omegle,telegram]) # Save omegle and telegram replies

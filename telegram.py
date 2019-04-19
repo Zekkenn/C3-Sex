@@ -34,6 +34,7 @@ class Extractor(object):
                                     result_dir=res_dir, aiml_dir=rules_dir,
                                     result_file='basic')
         self.__session_id = self.__predictor.session_data.add_session()
+        self.reset()
 
     def __openConnection(self):
         """__openConnection()
@@ -158,7 +159,9 @@ class Extractor(object):
                 self.__driver.find_element_by_xpath("//button[contains(@class, 'btn btn-md im_submit im_submit_send')]").click()
         else:
             print("========LOL============")
-        if ( time.perf_counter() - self.__timeOfConversation > 5*60):
+        print("=========WAITING========")
+        print( time.perf_counter() - self.__timeOut )
+        if ( time.perf_counter() - self.__timeOut > 5*60):
             self.__condition.notify()
             return True
         return False
@@ -214,6 +217,10 @@ class Extractor(object):
         self.__currentLength = 0
         self.__timeOfConversation = 0
         self.__initTimeUserResponse = 0
+        self.__init = False
+        self.__currentName = ''
+        self.__condition = ''
+        self.__timeOut = time.perf_counter()
     
     def tradeAccomplish(self, condition):
         self.__conversation = []
