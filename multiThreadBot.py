@@ -91,18 +91,18 @@ if __name__ == '__main__':
         if ( tradeTelegram ):                
             # End of telegram conversation
             # Get telegram user replies
+            print("========LOLACQUIRE==============")
             condition.acquire()
+            print("========LOLTRADE==============")
             telegram.tradeAccomplish( condition )
             condition.wait()
             print("========LOLWAIT==============")
             condition.release()
             print("========LOL==============")
-
-        else:
-            repFiles = saveReplies([omegle,telegram]) # Save omegle and telegram replies
-            emotionsAndSentiments = analyze(repFiles)
-            timeMetric, rulesMetric = analytics.getMetrics( [omegle,telegram] )
-            saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
+        repFiles = saveReplies([omegle,telegram]) # Save omegle and telegram replies
+        emotionsAndSentiments = analyze(repFiles)
+        timeMetric, rulesMetric = analytics.getMetrics( [omegle,telegram] )
+        saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], timeMetric, rulesMetric, repFiles )
         # OMEGLE NOTIFICATION
         omegle.reset()
 
