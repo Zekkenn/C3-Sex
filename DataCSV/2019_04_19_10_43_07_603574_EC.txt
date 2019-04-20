@@ -1,0 +1,5 @@
+ M ,joy
+ Age ,sadness
+ What’s your age? ,sadness
+ Do you have kik? ,joy
+ What’s your username? ,joy

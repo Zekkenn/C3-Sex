@@ -1,0 +1,5 @@
+ M 
+ Age 
+ What’s your age? 
+ Do you have kik? 
+ What’s your username? 

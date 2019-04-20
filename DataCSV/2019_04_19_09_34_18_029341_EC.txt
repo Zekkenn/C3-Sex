@@ -1,0 +1,10 @@
+ m ,joy
+ age? ,sadness
+ are u horny? ,joy
+ snap? ,joy
+ what is ur username? ,joy
+ we can be friends ,disgust
+ hmmm ,joy
+ ok ,joy
+ I don't need see ur face ,sadness
+ we can snap for fun ,disgust

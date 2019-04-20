@@ -1,0 +1,10 @@
+ m ,Neut
+ age? ,Neut
+ are u horny? ,Neg
+ snap? ,Neut
+ what is ur username? ,Neut
+ we can be friends ,Neut
+ hmmm ,Neg
+ ok ,Neut
+ I don't need see ur face ,Neut
+ we can snap for fun ,Neut
