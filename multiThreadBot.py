@@ -93,8 +93,9 @@ if __name__ == '__main__':
             # Get telegram user replies
             condition.acquire()
             telegram.tradeAccomplish( condition )
-            print("========LOLWAIT==============")
             condition.wait()
+            print("========LOLWAIT==============")
+            condition.release()
             print("========LOL==============")
 
         else:
