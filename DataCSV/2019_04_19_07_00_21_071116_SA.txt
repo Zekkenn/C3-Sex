@@ -1,8 +1,0 @@
- M ,Neut
- Wanna have sexting session? ,Pos
- ? ,Neut
- Nvm ,Neut
- ?? ,Neut
- Your name? ,Neut
- Daddy ,Neut
- What you doin? ,Neut

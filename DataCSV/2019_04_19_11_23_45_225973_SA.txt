@@ -1,6 +1,0 @@
- hi ,Neut
- m or f? ,Neut
- cool...mhere ,Neut
- I'ma guy ,Neut
- howoldareyou? ,Neut
- how old are you? ,Neut

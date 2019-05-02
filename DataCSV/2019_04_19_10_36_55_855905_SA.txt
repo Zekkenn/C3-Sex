@@ -1,8 +1,0 @@
- M ,Neut
- M ,Neut
- Horny? ,Neg
- Ok ,Neut
- Sorry for? ,Neg
- U gone mad? ,Neg
- Oh ,Neut
- Mr ja ,Neut

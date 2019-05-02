@@ -1,6 +1,0 @@
- Hi ,Neut
- How are you? ,Neut
- Yeah not bad, little tired ,Neg
- What? ,Neut
- I’m confused ,Neut
- What’s weird!  ? ,Neut
