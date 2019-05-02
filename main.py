@@ -1,5 +1,5 @@
-from test import Extractor as omegleExtractor
-from telegram import Extractor as telegramExtractor
+from omegleBot import Extractor as omegleExtractor
+from telegramBot import Extractor as telegramExtractor
 from settings import PROJECT_ROOT
 from threading import Thread
 import threading
