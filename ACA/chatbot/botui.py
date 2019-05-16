@@ -24,10 +24,10 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 
 def bot_ui():
-    corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
-    knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'Variety')
-    res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    rules_dir = os.path.join(PROJECT_ROOT, 'Data', 'Rules')
+    corp_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Corpus')
+    knbs_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Variety')
+    res_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Result')
+    rules_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Rules')
 
     with tf.Session() as sess:
         predictor = BotPredictor(sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,

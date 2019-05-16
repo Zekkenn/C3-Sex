@@ -1,9 +1,11 @@
 # exclude everything from results
+__pycache__/
+UsersReplies/*
 ACA/Data/Result/*
-!ACA/Data/Result
-__pycache__/*
-ACA/chatbot/__pycache__/*
-EC_Module/__pycache__/*
-!__pycache__
-!ACA/chatbot/__pycache__
-!EC_Module/__pycache__
+
+# exception to the rule
+!UsersReplies/.gitkeep
+!ACA/Data/Result/.gitkeep
+
+# ignore all logs
+*.log

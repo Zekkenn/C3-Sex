@@ -1,5 +1,0 @@
- M ,Neut
- Age ,Neut
- What’s your age? ,Neut
- Do you have kik? ,Neut
- What’s your username? ,Neut

@@ -1,2 +1,0 @@
-Opinion Metric,Emotion Metric,Time Metric,Rules Triggered Metric
-0.43121875126730747,0.6666666666666666,2.3462741286065607,0.0
