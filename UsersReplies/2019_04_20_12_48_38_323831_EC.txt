@@ -1,6 +1,0 @@
- M ,joy
- Hi ,joy
- Hey ,joy
- No? ,joy
- Age? ,sadness
- What does that mean ,sadness

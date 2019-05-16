@@ -1,5 +1,0 @@
- Hello  M 30 
- How are you 
- I'm good 
- How old are you 
- 9? 

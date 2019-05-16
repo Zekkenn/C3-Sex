@@ -1,4 +1,0 @@
- m ,Neut
- hey whats up ,Neut
- age? ,Neut
- nice im 10 ,Neut
