@@ -135,7 +135,7 @@ class BotTrainer(object):
 if __name__ == "__main__":
     from settings import PROJECT_ROOT
 
-    corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
-    res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
+    corp_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Corpus')
+    res_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Result')
     bt = BotTrainer(corpus_dir=corp_dir)
     bt.train(res_dir)

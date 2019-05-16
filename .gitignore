@@ -6,3 +6,6 @@ ACA/Data/Result/*
 # exception to the rule
 !UsersReplies/.gitkeep
 !ACA/Data/Result/.gitkeep
+
+# ignore all logs
+*.log
