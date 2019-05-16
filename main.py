@@ -79,16 +79,16 @@ def firstImplementation():
     #saveMetrics( emotionsAndSentiments[0], emotionsAndSentiments[1], metrics, repFiles )
 
 if __name__ == '__main__':
-    omegle = omegleExtractor()
     telegram = telegramExtractor()
+    omegle = omegleExtractor()
     threadTelegram = Thread(target = startBot, args = (telegram, ))
     threadTelegram.start()
     condition = threading.Condition()
     while (True):
-        #tradeTelegram = omegle.moti(telegram) 
+        tradeTelegram = omegle.moti(telegram) 
         # TELEGRAM NOTIFICATION
         # omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
-        if ( True ):                
+        if ( tradeTelegram ):         
             # End of telegram conversation
             # Get telegram user replies
             print("========LOLACQUIRE==============")

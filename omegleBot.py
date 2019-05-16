@@ -10,7 +10,7 @@ import gc
 import tensorflow as tf
 import SA_Module.sentimentAnalysis as sentimentModule
 import analytics as analize
-import Slangs.slangExtractor as slangs
+import Slangs.slangExtractor as slangs 
 
 from settings import PROJECT_ROOT
 from ACA.chatbot.botpredictor import BotPredictor
@@ -33,7 +33,11 @@ class Extractor(object):
         res_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Result')
         rules_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Rules')
 
-        self.__driver = webdriver.Chrome('chromedriver')
+        self.__driver = webdriver.Chrome('chromedriver', port=8080)    
+        time.sleep(10)
+        print("===============================================")
+        print("===============================================")
+        print("===============================================")
         self.__driver.get("https://www.omegle.com")
 
         self.__conversation = []
