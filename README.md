@@ -54,6 +54,6 @@ Before starting to use the product and to ensure that each functionality works p
 
 * To use the ACA module where all the logic of the conversational agent resides, you must ensure that it is trained, for this, the following files must be in the _./ACA/Data/Result_ folder:
 
-![](/ACA/Data/ACA_results.png)
+![](/ACA/Data/ACA_results.jpg)
 
 To generate them you must train the generative model (which will require a lot of time, depending on the training data you want to use) or use the already trained data that can be found [here](https://www.dropbox.com/sh/c0q5g2c9c9cbkzp/AACNcggs-brWdeHdRaVi45-Ca?dl=0).
