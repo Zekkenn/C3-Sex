@@ -1,0 +1,5 @@
+ M or f ,joy
+ Age? ,sadness
+ I’m an M ,joy
+ So what is your age? ,sadness
+ Nope fuck no ,fear

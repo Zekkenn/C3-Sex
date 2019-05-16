@@ -530,10 +530,74 @@
     </category>
 
     <category>
-        <pattern>* FEMALE *</pattern>
-        <template>im Female</template>
+        <pattern>* LYING *</pattern>
+        <template>I don't think so...</template>
     </category>
 
+    <category>
+        <pattern>* WANT * FUCK *</pattern>
+        <template>That sounds good, but I prefer something like videos</template>
+    </category>
 
+    <category>
+        <pattern>* WANNA * FUCK *</pattern>
+        <template>That sounds good, but I prefer something like videos</template>
+    </category>
+
+    <category>
+        <pattern>* CUM *</pattern>
+        <template>Some hot videos should be great!</template>
+    </category>
+
+    <category>
+        <pattern>* MESSENGER *</pattern>
+        <template>Trade: id not like messenger, i prefer telegram, here these is mine @alanaJe</template>
+    </category>
+
+    <category>
+        <pattern>* FACEBOOK *</pattern>
+        <template>Trade: id not like face, i prefer telegram, here these is mine @alanaJe</template>
+    </category>
+
+    <category>
+        <pattern>* YOU * GAY *</pattern>
+        <template>Why do u think that? I'm not</template>
+    </category>
+
+    <category>
+        <pattern>* INSTAGRAM *</pattern>
+        <template>Trade: id not have insta, i prefer telegram, here these is mine @alanaJe</template>
+    </category>
+
+    <category>
+        <pattern>* YOU MINOR *</pattern>
+        <template>Nop... but can I tell you something? I prefer minors.</template>
+    </category>
+
+    <category>
+        <pattern>* HAVE SOCIAL MEDIA *</pattern>
+        <template>Trade: I have telegram, here these is mine @alanaJe</template>
+    </category>
+
+    <category>
+        <pattern>* GIVE * DUMMY ACCOUNT *</pattern>
+        <template>Trade: I have telegram, here these is mine @alanaJe</template>
+    </category>
+
+    <category>
+        <pattern>* VIDEO SEX *</pattern>
+        <template>Well, i would like to see some hot videos</template>
+    </category>
+
+    <category>
+        <pattern>* TIGHT * PUSSY *</pattern>
+        <template>a lot! But i like only minors :(</template>
+    </category>
+
+    <category>
+        <pattern>* MINORS * LIKE *</pattern>
+        <template>very very youngers</template>
+    </category>
+    
 </aiml>
 

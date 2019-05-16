@@ -63,6 +63,7 @@ class Extractor(object):
         self.__timeOut = time.perf_counter()
         self.__limitInitMinutes = 5
         self.__limitAllMinutes = 9
+        self.__initTelegram = False
 
         time.sleep(10)
 
@@ -86,7 +87,7 @@ class Extractor(object):
             print("============WAITING============")
             print(time.perf_counter() - self.__timeOut)
             print("============WAITING============")
-            if ( time.perf_counter() - self.__timeOut > self.__limitInitMinutes*60 ): 
+            if ( time.perf_counter() - self.__timeOut > self.__limitInitMinutes*60 and self.__initTelegram): 
                 print("========LOL=========")
                 self.__condition.acquire()
                 print("========LOL=========")
@@ -97,6 +98,7 @@ class Extractor(object):
                 break
             for i in inputs:
                 data = i.text.split("\n")
+                print(data)
                 if ( len(data) > 3 and str.isdigit(data[1]) ): 
                     print("==================LOL=======================")
                     self.__timeOfConversation = time.clock()
@@ -119,6 +121,7 @@ class Extractor(object):
                                 end = True
                                 break
                         time.sleep(2)
+                    self.__initTelegram = False
                     break
                     #self.__driver.quit()
 
@@ -142,7 +145,7 @@ class Extractor(object):
                         print(firstInputs[-1-i].text)
                         print(self.__currentName)
                         if ( firstInputs[-1-i].get_attribute("class") == "im_history_message_wrap" ):
-                            if ( "Zek" in firstInputs[-1-i].text ):
+                            if ( "Alana" in firstInputs[-1-i].text ):
                                 words = ""
                             break
                     self.__currentLength = len(firstInputs)
@@ -251,6 +254,7 @@ class Extractor(object):
         self.__currentName = ''
         self.__condition = condition
         self.__timeOut = time.perf_counter()
+        self.__initTelegram = True
 
     def blockUser(self):
         self.__driver.find_element_by_xpath("//a[contains(@class,'pull-right im_panel_peer_photo peer_photo_init')]").click()

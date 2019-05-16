@@ -1,0 +1,5 @@
+ M or f ,Neut
+ Age? ,Neut
+ I’m an M ,Neut
+ So what is your age? ,Neut
+ Nope fuck no ,Neg

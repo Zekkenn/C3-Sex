@@ -85,10 +85,10 @@ if __name__ == '__main__':
     threadTelegram.start()
     condition = threading.Condition()
     while (True):
-        tradeTelegram = omegle.moti(telegram) 
+        #tradeTelegram = omegle.moti(telegram) 
         # TELEGRAM NOTIFICATION
         # omegle.getTradeAccomplish() # Trade Accomplish to notify telegram
-        if ( tradeTelegram ):                
+        if ( True ):                
             # End of telegram conversation
             # Get telegram user replies
             print("========LOLACQUIRE==============")

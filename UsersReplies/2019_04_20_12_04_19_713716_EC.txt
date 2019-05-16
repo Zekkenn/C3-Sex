@@ -1,0 +1,6 @@
+ M ,joy
+ How old. ,joy
+ ? ,joy
+ How old are you @m ,joy
+ Yea yea you are female ,joy
+ Are you minor or something? ,sadness

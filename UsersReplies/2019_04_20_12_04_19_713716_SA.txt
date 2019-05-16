@@ -1,0 +1,6 @@
+ M ,Neut
+ How old. ,Neut
+ ? ,Neut
+ How old are you @m ,Neut
+ Yea yea you are female ,Neg
+ Are you minor or something? ,Neut
