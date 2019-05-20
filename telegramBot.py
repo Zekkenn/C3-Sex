@@ -13,6 +13,7 @@ import tensorflow as tf
 import Slangs.slangExtractor as slangs
 
 from settings import PROJECT_ROOT
+from settings import CHROME_DIR
 from ACA.chatbot.botpredictor import BotPredictor
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -43,7 +44,7 @@ class Extractor(object):
         
 
         chrome_options = Options()
-        chrome_options.add_argument("--user-data-dir=C:/Users/sebastian.moreno-r/AppData/Local/Google/Chrome/User Data") # change to profile path
+        chrome_options.add_argument("--user-data-dir="+CHROME_DIR)
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument('--profile-directory=Default')

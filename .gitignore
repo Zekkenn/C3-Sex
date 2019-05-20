@@ -2,6 +2,7 @@
 __pycache__/
 UsersReplies/*
 ACA/Data/Result/*
+ACA/Data/Rules/brain.dump
 
 # exception to the rule
 !UsersReplies/.gitkeep
