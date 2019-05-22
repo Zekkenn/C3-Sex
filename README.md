@@ -62,7 +62,7 @@ To generate them you must train the generative model (which will require a lot o
 
 The following information is provided so that the user will be able to use each of these services individually, taking advantage of everything they can offer.
 
-### Artifitial Conversation Agent/Entity (ACA)
+### Artifitial Conversational Agent/Entity (ACA)
 
 This conversation module can be used in different ways, depending on what you want to do:
 
@@ -71,12 +71,12 @@ This conversation module can be used in different ways, depending on what you wa
 ```bash
 py ACA/chatbot/bottrainer.py
 ```
-*Keep in mind that training can take a long time (depending on parameters you want to train with). These parameters can be modified in ACA / Data / Corpus / hparams.json. Likewise, the dataset that is provided for training can be modified by adding files in ACA / Data / Corpus / Argument0 with the format Question-Answer, as its show in the clean data that we used. Once the training has begun, you must ensure that the following files are created in ACA / Data / Result, which are used for testing and prediction.*
+*Keep in mind that training can take a long time (depending on parameters you want to train with). These parameters can be modified in ACA/Data/Corpus/hparams.json. Likewise, the dataset that is provided for training can be modified by adding files in ACA/Data/Corpus/Argument0 with the format Question-Answer, as its show in the clean data that we used. Once the training has begun, you must ensure that the following files are created in ACA/Data/Result, which are used for testing and prediction.*
 
 - basic.data-00000-of-00001
 - basic.index
 
-2. **Test / Inference:** This stage provide a simple interface and a web-based one. Note that ACA / Data / Corpus / vocab.txt and ACA / Data / Rules / hot-startup.aiml files are necessary for inference. To see the performance of the model, you must execute the following command and wait until the ">" indicator appears:
+2. **Test / Inference:** This stage provide a simple interface and a web-based one. Note that *ACA/Data/Corpus/vocab.txt* and *ACA/Data/Rules/hot-startup.aiml* files are necessary for inference. To see the performance of the model, you must execute the following command and wait until the ">" indicator appears:
 
 ```bash
 py ACA/chatbot/botui.py
@@ -86,7 +86,7 @@ py ACA/chatbot/botui.py
 
 For the sentiment analysis module, you can make use of the two classifiers; opinion and emotions, the first one developed on Python and the second one on R.
 
-1. **Opinion Classifier:** You can access the file SA_Module / sentimentAnalysis.py from the root, and make use of the following functions, considering their inputs.
+1. **Opinion Classifier:** You can access the file *SA_Module/sentimentAnalysis.py* from the root, and make use of the following functions, considering their inputs.
 
 ```python
 predict(data) # data should be a response
@@ -94,7 +94,7 @@ predict_proba(data) # Same way, a sentence and the output differs 'cause returns
 sa_measure(replies_file) # A text file with sentences/responses to be classified with probabilities.
 ```
 
-2. **Emotions Classifier:** In the case of emotions module implemented in R, you can make use of the model trained by the EC_Module / emotional_classifier.py file, which executes an R script to generate prediction for those sentences that will be classified.
+2. **Emotions Classifier:** In the case of emotions module implemented in R, you can make use of the model trained by the *EC_Module/emotional_classifier.py* file, which executes an R script to generate prediction for those sentences that will be classified.
 
 ```python
 ec_measure(replies_file) # A text file with sentences to classify, returns a list with positive (1) emotions or negative (0)
