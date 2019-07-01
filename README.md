@@ -35,7 +35,7 @@ Before installing or downloading the project, you must ensure that you have inst
 | Package Name |                                                                              Description and Functionality                                                                             |
 |:------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |   selenium   | It provides the Selenium WebDriver API, which allows the project to connect to a browser natively.                                                                                     |
-|  tensorflow  | As a Machine Learning library, the project use it to build the recurrent neural network (RNN), which simulates the generative conversational agent                                     |
+|  tensorflow  | As a Machine Learning library, the project uses it to build the recurrent neural network (RNN), which simulates the generative conversational agent                                     |
 |    pandas    | A data analysis library used to manage and read certain data structures, such as csv and dataframes                                                                                    |
 |    sklearn   | In addition to making use of tensorflow, sklearn is available for the adoption of ML algorithms, such as the Bayesian network in the opinion classification model.                     |
 |     nltk     | The natural language tool gives the project the advantage of tokenize words, its used in the different models.                                                                         |
