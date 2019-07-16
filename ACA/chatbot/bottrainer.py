@@ -25,22 +25,38 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 class BotTrainer(object):
     def __init__(self, corpus_dir):
+        '''
+        Intialize BotTrainer Class given the corpus with the data
+        corpus_dir : Directory where the data is stored
+        '''
         self.graph = tf.Graph()
         with self.graph.as_default():
             tokenized_data = TokenizedData(corpus_dir=corpus_dir)
 
+            # Hyperparameters such as the number of epochs
             self.hparams = tokenized_data.hparams
+
+            # Get the batch with the initial params and the dataset ( input / output / datasource )
             self.train_batch = tokenized_data.get_training_batch()
+
+            # Sequence-to-sequence model creator to create models for training or inference (It is documented in modelcreator.py)
             self.model = ModelCreator(training=True, tokenized_data=tokenized_data,
                                       batch_input=self.train_batch)
 
     def train(self, result_dir, target=""):
-        """Train a seq2seq model."""
+        """
+        Train a seq2seq model.
+        Args:
+            result_dir: Directory where we are going to store our results
+            target: Target of the session
+        """
         # Summary writer
         summary_name = "train_log"
         summary_writer = tf.summary.FileWriter(os.path.join(result_dir, summary_name), self.graph)
 
         log_device_placement = self.hparams.log_device_placement
+
+        # Number of epochs of the train
         num_epochs = self.hparams.num_epochs
 
         config_proto = tf.ConfigProto(log_device_placement=log_device_placement,
@@ -65,6 +81,7 @@ class BotTrainer(object):
             while train_epoch < num_epochs:
                 # Each run of this while loop is a training step, multiple time/steps will trigger
                 # the train_epoch to be increased.
+                # Parameter of the algorithm - Based on the perplexity
                 learning_rate = self._get_learning_rate(train_perp)
 
                 try:
@@ -82,7 +99,10 @@ class BotTrainer(object):
                     # Finished going through the training dataset. Go to next epoch.
                     train_epoch += 1
 
+                    # Average of the loss, calculated to check it 
                     mean_loss = ckpt_loss / ckpt_predict_count
+
+                    # Perplexity of the epoch -> How well a probability distribution or probability model predicts a sample
                     train_perp = math.exp(float(mean_loss)) if mean_loss < 300 else math.inf
 
                     epoch_dur = time.time() - epoch_start_time
@@ -111,6 +131,10 @@ class BotTrainer(object):
 
     @staticmethod
     def _get_learning_rate(perplexity):
+        '''
+        Obatins the learning rate given the perplexity -> 
+        The algorithm converges properly with a good learning rate
+        '''
         if perplexity <= 1.48:
             return 9.6e-5
         elif perplexity <= 1.64:
