@@ -25,6 +25,10 @@ input_data['class'].value_counts()
 
 from sklearn.feature_extraction.text import CountVectorizer
 
+"""
+    Las siguientes variables se encargan de realizar la matriz de dtm, Document Term Matrix
+    La cual, es la estructura de datos que se va a usar para los entrenamientos y testeos
+"""
 countvec1 = CountVectorizer()
 dtm_v1 = pd.DataFrame(countvec1.fit_transform(input_data['text']).toarray(), columns=countvec1.get_feature_names(), index=None)
 dtm_v1['class'] = input_data['class']
@@ -73,6 +77,10 @@ clf.score(X_test,df_test['class'])
 ##########
 # Creating predict function - data is a string
 def predict( data ):
+    """
+        predict: Toma los datos como una cadena y clasifica la polaridad.
+        Positiva o Negativa.
+    """
     df = pd.read_csv(StringIO( "class,text\n" + "_," + " " + data))
     countvec = CountVectorizer(min_df= 5, tokenizer=tokenize, stop_words=stopwords.words('english'), vocabulary=test)
     dtm = pd.DataFrame(countvec.fit_transform(df['text']).toarray(), columns=countvec.get_feature_names(), index=None)
@@ -81,6 +89,10 @@ def predict( data ):
     return clf.predict( dtm.drop('class', axis=1) )
 
 def predict_proba( data ):
+    """
+        predict_proba: Toma los datos como una cadena y clasifica la polaridad.
+        Sin embargo, devuelve los valores en forma de probabilidad por polaridad.
+    """
     df = pd.read_csv(StringIO( "class,text\n" + "_," + " " + data))
     countvec = CountVectorizer(min_df= 5, tokenizer=tokenize, stop_words=stopwords.words('english'), vocabulary=test)
     dtm = pd.DataFrame(countvec.fit_transform(df['text']).toarray(), columns=countvec.get_feature_names(), index=None)
@@ -88,6 +100,11 @@ def predict_proba( data ):
     return clf.predict_proba( dtm.drop('class', axis=1) )
 
 def sa_measure( replies_file ):
+    """
+        sa_measure: Es la función que centraliza las demás, parsea los datos y mide
+        la polaridad de las oraciones ingresadas.
+    """
+    # Sentences of the file.
     reps = list();
     sentiments = list()
     with open(replies_file, 'r') as file:

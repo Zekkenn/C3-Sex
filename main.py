@@ -15,10 +15,16 @@ import datetime
 BOTS_N = 1
 
 def startBot( bot ):
+    """ Starts the Bot ... This is created in order to start many bots in parallel"""
     bot.moti()
 
 def saveReplies( bots ):
+    """
+        saveReplies: Saves all interaction that our bot manage.
+    """
+    # each bot interaction is stored in each name of file (in files)
     files = list()
+    # Responses given by the user
     userResponses = list()
     for bot in bots:
         userResponses += bot.getConversation()
@@ -35,6 +41,9 @@ def saveReplies( bots ):
     return(files)
         
 def saveMetrics( sentiments, emotions, timeMetric, rulesMetric, files ):
+    """
+        saveMetrics: Store the metrics that we create.
+    """
     i = 0
     for file in files:
         with open(file.replace(".txt","_Metrics.txt"), 'w+') as resultfile:
@@ -48,7 +57,12 @@ def saveMetrics( sentiments, emotions, timeMetric, rulesMetric, files ):
             
 
 def analyze( repFiles ):
+    """
+        Performs the sentiment analysis
+    """
+    # Sentiments Classfied
     sentiments = []
+    # Emotions Classfied
     emotions = []
     for file in repFiles:
         # Sentiment Analysis
@@ -60,6 +74,9 @@ def analyze( repFiles ):
     return sentiments, emotions
 
 def firstImplementation():
+    """
+        Threads of bot, initializer.
+    """
     bots = list()
     threads = list()
     for i in range(0,BOTS_N):
@@ -73,6 +90,7 @@ def firstImplementation():
     for t in threads:
         t.join()
     print("==============================================================================================================")
+    # repFiles is an array with all files names
     repFiles = saveReplies(bots)
     emotionsAndSentiments = analyze(repFiles)
     metrics = analytics.getMetrics( bots )

@@ -8,6 +8,10 @@ CONTENT = urlopen("https://gist.github.com/Zenexer/af4dd767338d6c6ba662#file-int
 SLANGS_FILE = PROJECT_ROOT + '\\Slangs\\en_slangs.csv'
 
 def extract():
+    """
+        Extract: Extrae cada palabra (modismo) junto con su significado real correspondiente
+        luego los guarda en el directorio (Slangs/en_slangs.csv) como un CSV
+    """
     soup = BeautifulSoup(CONTENT)
 
     td_count = 0
@@ -40,6 +44,9 @@ def extract():
             writer.writerow({'slang' : key, 'meaning' : val})
 
 def getSlangs():
+    """
+        Obtiene las palabras (modismos) con su significado.
+    """
     slangs = {}
     with open(SLANGS_FILE) as csvfile:
         reader = csv.DictReader(csvfile)

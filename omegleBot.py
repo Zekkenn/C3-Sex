@@ -40,11 +40,17 @@ class Extractor(object):
         print("===============================================")
         self.__driver.get("https://www.omegle.com")
 
+        # Stores the convesrsation, user replies
         self.__conversation = []
+        # Length of the conversation, only user replies
         self.__lenConversation = [0]
+        # Time responses, to analize the metrics
         self.__timeResponse = [0]
+        # Current length of the conversation, to make controls
         self.__currentLength = 0
         self.__timeOfConversation = 0
+        # Time limit - between initial user response and bot response 
+        # if initTimeUserResponse > 5 min breaks
         self.__initTimeUserResponse = 0
         self.__init = False
         userResponse = False
@@ -56,7 +62,9 @@ class Extractor(object):
         self.__driver.find_element_by_xpath("//img[contains(@id, 'textbtn')]").click()
         first = True ; first_time = time.clock()
         time.sleep(4)
-        print("=======================TEST2============================") 
+        
+        # Bot init
+
         while(True):
             if (self.__tradeAccomplish) : break
             if ( (time.clock() - first_time)/60 >= 25 ): break
@@ -91,6 +99,9 @@ class Extractor(object):
         return self.__tradeAccomplish
         
     def response(self, userResponse):
+        """
+            Calculates the response of a reply
+        """
         inputs = self.__driver.find_elements(By.XPATH, "//div[contains(@class, 'logitem')]/p[contains(@class, 'msg')]")
         words = ""
         if ( self.__currentLength < len(inputs) ):

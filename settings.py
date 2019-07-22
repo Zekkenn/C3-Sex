@@ -14,5 +14,7 @@
 # ==============================================================================
 import os
 
+# File locations
+
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 CHROME_DIR = os.path.expanduser("~")+"\\AppData\\Local\\Google\\Chrome\\User Data"

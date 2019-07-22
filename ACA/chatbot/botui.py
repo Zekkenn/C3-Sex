@@ -24,6 +24,14 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 
 def bot_ui():
+    """ 
+        En las variables dir se ubican principalmente los datasets que se van a usar 
+        para los entrenamientos y las reglas. 
+        corp_dir -> Corpus de data para entrenar el chatbot.
+        knbs_dir -> Corpus de entrenamiento con Jokes y Stories.
+        res_dir -> Directorio resultado donde se guardan los resultados (Entrenamientos).
+        rules_dir -> Directorio donde están ubicadas las reglas.
+    """
     corp_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Corpus')
     knbs_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Variety')
     res_dir = os.path.join(PROJECT_ROOT, 'ACA', 'Data', 'Result')

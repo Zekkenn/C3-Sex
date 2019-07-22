@@ -41,8 +41,7 @@ class Extractor(object):
         """__openConnection()
 
         """
-        
-
+        # Open telegram with all cache in Chrome
         chrome_options = Options()
         chrome_options.add_argument("--user-data-dir="+CHROME_DIR)
         chrome_options.add_argument("--no-sandbox")
@@ -52,6 +51,7 @@ class Extractor(object):
         self.__driver = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
         self.__driver.get("https://web.telegram.org/#/im")
         
+        # Same variables as in file omegleBot.py
         self.__conversation = []
         self.__lenConversation = [0]
         self.__timeResponse = [0]
@@ -85,23 +85,16 @@ class Extractor(object):
         
         while (True):
             time.sleep(5)
-            print("============WAITING============")
             print(time.perf_counter() - self.__timeOut)
-            print("============WAITING============")
             if ( time.perf_counter() - self.__timeOut > self.__limitInitMinutes*60 and self.__initTelegram): 
-                print("========LOL=========")
                 self.__condition.acquire()
-                print("========LOL=========")
                 self.__condition.notify()
-                print("========LOL=========")
                 self.__condition.release()
-                print("========LOL=========")
                 break
             for i in inputs:
                 data = i.text.split("\n")
                 print(data)
                 if ( len(data) > 3 and str.isdigit(data[1]) ): 
-                    print("==================LOL=======================")
                     self.__timeOfConversation = time.clock()
                     i.find_element_by_xpath("//div[contains(@class,'im_dialog_message_wrap')]").click()
                     self.__currentName = data[2]
